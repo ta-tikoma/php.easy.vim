@@ -6,7 +6,7 @@ function! php#easy#di#append()
     let l:constructorBegin = search('public function __construct(', 'ew')
     if l:constructorBegin == 0
         call php#easy#function#construct()
-        let l:constructorBegin = search('public function __construct(', 'ew')
+        call search('public function __construct(', 'ew')
     endif
 
     call php#easy#argument#insert()
@@ -16,7 +16,7 @@ endfunction
 
 function! php#easy#di#end()
     " copy arguments
-    let l:constructorBegin = search('public function __construct(', 'bew')
+    call search('public function __construct(', 'bew')
     normal! l"pyi)
     let l:input = trim(@p)
     if len(l:input) == 0
@@ -26,7 +26,7 @@ function! php#easy#di#end()
     let l:arguments = split(l:input, ',')
 
     " set properies value by arguments
-    let l:constructorBegin = search("{")
+    call search("{")
     for argument in l:arguments
         let l:typeAndName = split(trim(argument))
         let l:propertyExist = search("^    \\(private\\|public\\|protected\\) " . l:typeAndName[1], 'wn')

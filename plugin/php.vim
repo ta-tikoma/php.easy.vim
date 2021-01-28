@@ -7,6 +7,8 @@ let g:phpEasyUseDefaultKeyBinding = get(g:, 'phpEasyUseDefaultKeyBinding', 1)
 if g:phpEasyUseDefaultKeyBinding
     " nmap <A-j> :call php#easy#navigation#next()<CR>
     " nmap <A-k> :call php#easy#navigation#prev()<CR>
+    nmap = :call php#easy#navigation#next()<CR>
+    nmap - :call php#easy#navigation#prev()<CR>
 
     nmap <C-p>f :call php#easy#function#append()<CR>
     nmap <C-p>F :call php#easy#function#prepend()<CR>
@@ -16,7 +18,10 @@ if g:phpEasyUseDefaultKeyBinding
     nmap <C-p>rf :call php#easy#function#rename()<CR>
 
     nmap <C-p>a :call php#easy#argument#append()<CR>
-    " nmap <C-p>da1 :call PhpDeleteArgument(1)<CR>
+    nmap <C-p>da1 :call php#easy#argument#delete(1)<CR>
+    nmap <C-p>da2 :call php#easy#argument#delete(2)<CR>
+    nmap <C-p>da3 :call php#easy#argument#delete(3)<CR>
+    nmap <C-p>da4 :call php#easy#argument#delete(4)<CR>
     " nmap <C-p>ca1 :call PhpChangeArgument(1)<CR>
     " nmap <C-p>cat1 :call PhpChangeArgumentType(1)<CR>
 
