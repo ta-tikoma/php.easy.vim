@@ -10,7 +10,7 @@ endfunction
 
 " insert argument
 function! php#easy#argument#insert()
-    normal! l"pyi)
+    normal! l"pyi)^
     let l:arguments = @p
 
     let l:endBracket = search(")")

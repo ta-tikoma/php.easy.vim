@@ -17,8 +17,8 @@ nmap <C-p>a :call php#easy#argument#append()<CR>
 " nmap <C-p>ca1 :call PhpChangeArgument(1)<CR>
 " nmap <C-p>cat1 :call PhpChangeArgumentType(1)<CR>
 
-nmap <C-p>p :call PhpAppendProperty2("private")<CR>
-nmap <C-p>P :call PhpAppendProperty2("public")<CR>
+nmap <C-p>p :call php#easy#property#append("private")<CR>
+nmap <C-p>P :call php#easy#property#append("public")<CR>
 
 nmap <C-p>di :call php#easy#di#append()<CR>
 

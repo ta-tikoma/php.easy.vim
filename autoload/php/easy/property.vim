@@ -6,23 +6,25 @@ function! php#easy#property#append(visibility)
     let l:lastProperty = search("^    \\(private\\|public\\|protected\\) \\$", 'b')
     if l:lastProperty == 0
         let l:beginOfClass = search("^{")
+        call php#easy#position#ifBelowAppendLines(5)
         exec "normal! o/**"
     else
+        call php#easy#position#ifBelowAppendLines(5)
         exec "normal! o\<CR>/**"
     endif
     exec "normal! o@var "
 
-    call PhpAppendBegin("php#easy#property#end(\"" . a:visibility . "\")")
+    call php#easy#insert#append("php#easy#property#end(\"" . a:visibility . "\")")
 endfunction
 
 function! php#easy#property#end(visibility)
     exec "normal! o/\<CR>" . a:visibility . " $;"
 
-    call PhpInsertBegin("php#easy#property#end2(\"" . a:visibility . "\")")
+    call php#easy#insert#insert("php#easy#property#end2(\"" . a:visibility . "\")")
 endfunction
 
 function! php#easy#property#end2(visibility)
-    call PhpRestorePosition()
+    call php#easy#position#restore()
 
     silent! call repeat#set(":call php#easy#property#append(\"" . a:visibility . "\")\<CR>", v:count)
 endfunction
