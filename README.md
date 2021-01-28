@@ -33,6 +33,9 @@ let g:phpEasyUseDefaultKeyBinding = 0
 | **Property** |||
 | `<C-p>p` | `php#easy#property#append("private")` | Append private property to current class. *You can use `.` for add another property if install [vim-repeat](https://github.com/tpope/vim-repeat)* | ✅ |
 | `<C-p>P` | `php#easy#property#append("public")` | Append public property to current class | ✅ |
+| `<C-p>dp` | | Delete property under cursor | |
+| `<C-p>yp` | | Copy property under cursor | |
+| `<C-p>ypp` | | Copy property under cursor and paste after | |
 | **DI** |||
 | `<C-p>di` | `php#easy#di#append()` | Append constructor to current class (if not exist), append argument and property | ✅ |
 | **Objects** |||
@@ -43,5 +46,5 @@ let g:phpEasyUseDefaultKeyBinding = 0
 | `<C-p>l` | `php#easy#other#log()` | Append on new line print structure for debug | ✅ |
 | `<C-p>v` | `php#easy#other#changeVisibility()` | Change visibiliti property or function on current line | ✅ |
 | **Navigation** |||
-| | `php#easy#navigation#next` | Jump to next property or method | ✅ |
-| | `php#easy#navigation#prev` | Jump to prev property or method | ✅ |
+| `=` | `php#easy#navigation#next` | Jump to next property or method | ✅ |
+| `-` | `php#easy#navigation#prev` | Jump to prev property or method | ✅ |

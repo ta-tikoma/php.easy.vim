@@ -1,25 +1,35 @@
 " append function
 function! php#easy#function#append()
-    call inputsave()
-    let name = input("{function name}: ")
-    call inputrestore()
-    if strlen(name) == 0
-        return
-    endif
+    normal! k
     let lastFunction = search("^    }")
-    call s:PhpInsertFunction(name, lastFunction)
+    if l:lastFunction == 0
+        call search("^}")
+        exec "normal O\<CR>public function "
+    else
+        exec "normal o\<CR>public function "
+    endif
+
+    call php#easy#insert#append("php#easy#function#end()")
+endfunction
+
+function! php#easy#function#end()
+    exec "normal o{}"
+    startinsert
 endfunction
 
 " prepend function
 function! php#easy#function#prepend()
-    call inputsave()
-    let name = input("Name of function: ")
-    call inputrestore()
-    if strlen(name) == 0
-        return
+    normal! j 
+    let lastFunction = search("^    \\(private\\|public\\|protected\\) function", 'b')
+    if l:lastFunction == 0
+        call search("^}")
+        exec "normal O\<CR>public function "
+    else
+        exec "normal O"
+        exec "normal O\<CR>public function "
     endif
-    let lastFunction = search("^    }", 'b')
-    call s:PhpInsertFunction(name, lastFunction)
+
+    call php#easy#insert#append("php#easy#function#end()")
 endfunction
 
 " copy function
