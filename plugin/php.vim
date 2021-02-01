@@ -13,9 +13,9 @@ if g:phpEasyUseDefaultKeyBinding
     nmap <C-p>f :call php#easy#function#append()<CR>
     nmap <C-p>F :call php#easy#function#prepend()<CR>
     nmap <C-p>yf :call php#easy#function#copy()<CR>
-    nmap <C-p>ypf :call php#easy#function#duplicate()<CR>
+    nmap <C-p>rf :call php#easy#function#replica()<CR>
     nmap <C-p>df :call php#easy#function#delete()<CR>
-    nmap <C-p>rf :call php#easy#function#rename()<CR>
+    nmap <C-p>rnf :call php#easy#function#rename()<CR>
 
     nmap <C-p>a :call php#easy#argument#append()<CR>
     nmap <C-p>da1 :call php#easy#argument#delete(1)<CR>

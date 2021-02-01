@@ -36,38 +36,54 @@ endfunction
 function! php#easy#function#copy()
     call php#easy#position#remember()
 
-    let l:funcitonBegin = search("^    \\(private\\|public\\|protected\\) function", "b")
+    call search("^    \\(private\\|public\\|protected\\) function", "b")
+    " docs
+    normal! k
+    if match(getline("."), "^    *") != -1
+        call search("^    /", "b")
+    else
+        normal! j
+    endif
+    
     normal! V
-    let l:funcitonEnd = search("^    }", "e")
+    call search("^    }", "e")
     normal! y
 
     call php#easy#position#restore()
 endfunction
 
 " duplicate function
-function! php#easy#function#duplicate()
+function! php#easy#function#replica()
     call php#easy#function#copy()
 
-    let l:funcitonEnd = search("^    }", "e")
+    call search("^    }", "e")
     exec "normal! o"
     normal! pzz
-    let l:funcitonBegin = search("^    \\(private\\|public\\|protected\\) function", "e")
+    call search("^    \\(private\\|public\\|protected\\) function", "e")
     exec "normal! wdw"
     startinsert
 endfunction
 
 " rename function
 function! php#easy#function#rename()
-    let l:funcitonBegin = search("^    \\(private\\|public\\|protected\\) function", "be")
+    call search("^    \\(private\\|public\\|protected\\) function", "be")
     exec "normal! wdw"
     startinsert
 endfunction
 
 " delete function
 function! php#easy#function#delete()
-    let l:funcitonBegin = search("^    \\(private\\|public\\|protected\\) function", "b")
+    call search("^    \\(private\\|public\\|protected\\) function", "b")
+    " docs
+    normal! k
+    if match(getline("."), "^    *") != -1
+        call search("^    /", "b")
+    else
+        normal! j
+    endif
+
     normal! V
-    let l:funcitonEnd = search("^    }", "e")
+    call search("^    }", "e")
     normal! d
 endfunction
 

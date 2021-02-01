@@ -22,9 +22,9 @@ let g:phpEasyUseDefaultKeyBinding = 0
 | `<C-p>f` | `php#easy#function#append()` | Append new function after current function | ✅ |
 | `<C-p>F` | `php#easy#function#prepend()` | Append new function before current function | ✅ |
 | `<C-p>yf` | `php#easy#function#copy()` | Copy function under cursor | ✅ |
-| `<C-p>ypf` | `php#easy#function#duplicate()` | Copy function under, paste after current and trigger rename function | ✅ |
+| `<C-p>rf` | `php#easy#function#replica()` | Copy function under, paste after current and trigger rename function | ✅ |
 | `<C-p>df` | `php#easy#function#delete()` | Delete function under cursor | ✅ |
-| `<C-p>rf` | `php#easy#function#rename()` | Rename function under cursor | ✅ |
+| `<C-p>rnf` | `php#easy#function#rename()` | Rename function under cursor | ✅ |
 | **Argument** |||
 | `<C-p>a` | `php#easy#argument#append()` | Append new argument in current function | ✅ |
 | `<C-p>da{1-4}` | `php#easy#argument#delete` | Delete argument by number in current function | ✅ |
@@ -35,7 +35,7 @@ let g:phpEasyUseDefaultKeyBinding = 0
 | `<C-p>P` | `php#easy#property#append("public")` | Append public property to current class | ✅ |
 | `<C-p>dp` | | Delete property under cursor | |
 | `<C-p>yp` | | Copy property under cursor | |
-| `<C-p>ypp` | | Copy property under cursor and paste after | |
+| `<C-p>rp` | | Copy property under cursor and paste after | |
 | **DI** |||
 | `<C-p>di` | `php#easy#di#append()` | Append constructor to current class (if not exist), append argument and property | ✅ |
 | **Objects** |||
