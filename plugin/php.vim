@@ -37,7 +37,7 @@ if g:phpEasyUseDefaultKeyBinding
     " other
     nmap <C-p>l :call php#easy#other#log()<CR>
     nmap <C-p>v :call php#easy#other#changeVisibility()<CR>
-    nmap <C-p><C-p> :call php#easy#other#doc()<CR>
+    nmap <C-p>ad :call php#easy#other#doc()<CR>
 
     " navigation
     nmap = :call php#easy#navigation#next()<CR>
