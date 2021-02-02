@@ -18,3 +18,13 @@ function! php#easy#other#changeVisibility()
 
     silent! call repeat#set(":call PhpChangeVisibility()\<CR>", v:count)
 endfunction
+
+" prepend doc block
+function! php#easy#other#doc()
+    call php#easy#position#remember()
+
+    call search("^    \\(private\\|public\\|protected\\) function", "bW")
+    exec "normal O/**\<CR> \<CR>/"
+    normal! k
+    call php#easy#insert#append("php#easy#position#restore()")
+endfunction

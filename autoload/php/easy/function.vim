@@ -1,7 +1,7 @@
 " append function
 function! php#easy#function#append()
     normal! k
-    let lastFunction = search("^    }")
+    let l:lastFunction = search("^    }")
     if l:lastFunction == 0
         call search("^}")
         exec "normal O\<CR>public function "
@@ -20,7 +20,7 @@ endfunction
 " prepend function
 function! php#easy#function#prepend()
     normal! j 
-    let lastFunction = search("^    \\(private\\|public\\|protected\\) function", 'b')
+    let l:lastFunction = search("^    \\(private\\|public\\|protected\\) function", 'b')
     if l:lastFunction == 0
         call search("^}")
         exec "normal O\<CR>public function "
