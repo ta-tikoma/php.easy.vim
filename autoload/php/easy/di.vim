@@ -5,7 +5,7 @@ function! php#easy#di#append()
     " find or create constructor
     let l:constructorBegin = search('public function __construct(', 'ew')
     if l:constructorBegin == 0
-        call php#easy#function#construct()
+        call php#easy#method#construct()
         call search('public function __construct(', 'ew')
     endif
 

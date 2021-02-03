@@ -16,7 +16,7 @@ function! php#easy#other#changeVisibility()
         silent :s/protected/public/g
     endif
 
-    silent! call repeat#set(":call PhpChangeVisibility()\<CR>", v:count)
+    silent! call repeat#set(":call php#easy#other#changeVisibility()\<CR>", v:count)
 endfunction
 
 " prepend doc block

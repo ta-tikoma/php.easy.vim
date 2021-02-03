@@ -6,12 +6,17 @@ let g:phpEasyUseDefaultKeyBinding = get(g:, 'phpEasyUseDefaultKeyBinding', 1)
 
 if g:phpEasyUseDefaultKeyBinding
     " function
-    nmap <C-p>af :call php#easy#function#append()<CR>
-    nmap <C-p>aF :call php#easy#function#prepend()<CR>
-    nmap <C-p>yf :call php#easy#function#copy()<CR>
-    nmap <C-p>rf :call php#easy#function#replica()<CR>
-    nmap <C-p>df :call php#easy#function#delete()<CR>
-    nmap <C-p>rnf :call php#easy#function#rename()<CR>
+    nmap <C-p>af :call php#easy#function#foreach()<CR>
+    nmap <C-p>ai :call php#easy#function#if()<CR>
+    nmap <C-p>ae :call php#easy#function#else()<CR>
+
+    " method
+    nmap <C-p>am :call php#easy#method#append()<CR>
+    nmap <C-p>pm :call php#easy#method#prepend()<CR>
+    nmap <C-p>ym :call php#easy#method#copy()<CR>
+    nmap <C-p>rm :call php#easy#method#replica()<CR>
+    nmap <C-p>dm :call php#easy#method#delete()<CR>
+    nmap <C-p>rnm :call php#easy#method#rename()<CR>
 
     " argument
     nmap <C-p>aa :call php#easy#argument#append()<CR>
