@@ -8,10 +8,18 @@ A few functions for make work with PHP projects easy and quickly.
 Plug 'ta-tikoma/php.easy.vim'
 ```
 
-# If you want make self key binding
+# Some settings
+
+## If you want make self key binding
 
 ```vim
 let g:phpEasyUseDefaultKeyBinding = 0
+```
+
+## If you need check stack fucntions of php#easy
+
+```vim
+php#easy#insert#is()
 ```
 
 # Features
@@ -21,9 +29,9 @@ let g:phpEasyUseDefaultKeyBinding = 0
 | **Constants**     |||
 | `<C-p>ac`         | | **A**ppend **c**onstant | |
 | **Function**      |||
-| `<C-p>af`         | `php#easy#function#foreach`               | **A**ppend **f**oreach |  |
-| `<C-p>ai`         | `php#easy#function#if`                    | **A**ppend **i**f |  |
-| `<C-p>ae`         | `php#easy#function#else`                  | **A**ppend **e**lse |  |
+| `<C-p>af`         | `php#easy#function#foreach()`             | **A**ppend **f**oreach | ✅ |
+| `<C-p>ai`         | `php#easy#function#if()`                  | **A**ppend **i**f | ✅ |
+| `<C-p>ae`         | `php#easy#function#else()`                | **A**ppend **e**lse | ✅ |
 | `<C-p>as`         | | **A**ppend **s**wich |  |
 | `<C-p>ar`         | | **A**ppend **r**eturn |  |
 | **Method**        |||
@@ -35,7 +43,7 @@ let g:phpEasyUseDefaultKeyBinding = 0
 | `<C-p>rnm`        | `php#easy#method#rename()`                | **R**e**n**ame **m**ethod under cursor | ✅ |
 | **Argument**      |||
 | `<C-p>aa`         | `php#easy#argument#append()`              | **A**ppend new **a**rgument in current function | ✅ |
-| `<C-p>da{1-4}`    | `php#easy#argument#delete`                | **D**elete **a**rgument by number in current function | ✅ |
+| `<C-p>da{1-4}`    | `php#easy#argument#delete()`              | **D**elete **a**rgument by number in current function | ✅ |
 | `<C-p>ca{1-4}`    | | Change argament by number in current function | |
 | `<C-p>cat{1-4}`   | | Change argument type by number in current function | |
 | **Property**      |||
@@ -53,9 +61,9 @@ let g:phpEasyUseDefaultKeyBinding = 0
 | **Other**         |||
 | `<C-p>l`          | `php#easy#other#log()`                    | Append on new line print structure for debug | ✅ |
 | `<C-p>v`          | `php#easy#other#changeVisibility()`       | Change **v**isibiliti property or function on current line *(Can use `.`)* | ✅ |
-| `<C-p>ad`         | `php#easy#other#doc`                      | **A**dd **d**oc-block before current function or property | ✅ |
+| `<C-p>ad`         | `php#easy#other#doc()`                    | **A**dd **d**oc-block before current function or property | ✅ |
 | **Navigation**    |||
-| `=`               | `php#easy#navigation#next`                | Jump to next property or method | ✅ |
-| `-`               | `php#easy#navigation#prev`                | Jump to prev property or method | ✅ |
+| `=`               | `php#easy#navigation#next()`              | Jump to next property or method | ✅ |
+| `-`               | `php#easy#navigation#prev()`              | Jump to prev property or method | ✅ |
 
 # Examples
