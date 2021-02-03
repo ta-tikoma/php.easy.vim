@@ -32,8 +32,7 @@ php#easy#insert#is()
 | `<C-p>af`         | `php#easy#function#foreach()`             | **A**ppend **f**oreach | ✅ |
 | `<C-p>ai`         | `php#easy#function#if()`                  | **A**ppend **i**f | ✅ |
 | `<C-p>ae`         | `php#easy#function#else()`                | **A**ppend **e**lse | ✅ |
-| `<C-p>as`         | | **A**ppend **s**wich |  |
-| `<C-p>ar`         | | **A**ppend **r**eturn |  |
+| `<C-p>as`         | `php#easy#function#switch`                | **A**ppend **s**wich | ✅ |
 | **Method**        |||
 | `<C-p>am`         | `php#easy#method#append()`                | **A**ppend new **m**ethod after current function | ✅ |
 | `<C-p>pm`         | `php#easy#method#prepend()`               | **P**reppend new **m**ethod before current function | ✅ |
@@ -63,7 +62,9 @@ php#easy#insert#is()
 | `<C-p>v`          | `php#easy#other#changeVisibility()`       | Change **v**isibiliti property or function on current line *(Can use `.`)* | ✅ |
 | `<C-p>ad`         | `php#easy#other#doc()`                    | **A**dd **d**oc-block before current function or property | ✅ |
 | **Navigation**    |||
-| `=`               | `php#easy#navigation#next()`              | Jump to next property or method | ✅ |
-| `-`               | `php#easy#navigation#prev()`              | Jump to prev property or method | ✅ |
+| `=`               | `php#easy#navigation#methodNext()`        | Jump to next method | ✅ |
+| `-`               | `php#easy#navigation#methodPrev()`        | Jump to prev method | ✅ |
+| `=`               | `php#easy#navigation#propertyNext()`      | Jump to next property | ✅ |
+| `-`               | `php#easy#navigation#propertyPrev()`      | Jump to prev property | ✅ |
 
 # Examples

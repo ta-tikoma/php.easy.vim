@@ -9,6 +9,7 @@ if g:phpEasyUseDefaultKeyBinding
     nmap <C-p>af :call php#easy#function#foreach()<CR>
     nmap <C-p>ai :call php#easy#function#if()<CR>
     nmap <C-p>ae :call php#easy#function#else()<CR>
+    nmap <C-p>as :call php#easy#function#switch()<CR>
 
     " method
     nmap <C-p>am :call php#easy#method#append()<CR>
@@ -45,8 +46,10 @@ if g:phpEasyUseDefaultKeyBinding
     nmap <C-p>ad :call php#easy#other#doc()<CR>
 
     " navigation
-    nmap = :call php#easy#navigation#next()<CR>
-    nmap - :call php#easy#navigation#prev()<CR>
+    nmap = :call php#easy#navigation#methodNext()<CR>
+    nmap - :call php#easy#navigation#methodPrev()<CR>
+    nmap _ :call php#easy#navigation#propertyNext()<CR>
+    nmap + :call php#easy#navigation#propertyPrev()<CR>
 endif
 
 augroup php_easy_insert_end

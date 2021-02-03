@@ -1,12 +1,19 @@
 function! php#easy#function#foreach()
-    exec "normal! o\<CR>foreach () {\<CR>}"
+    exec "normal! oforeach () {\<CR>}"
     normal! kf)
     
     call php#easy#insert#insert("")
 endfunction
 
 function! php#easy#function#if()
-    exec "normal! o\<CR>if () {\<CR>}"
+    exec "normal! oif () {\<CR>}"
+    normal! kf)
+
+    call php#easy#insert#insert("")
+endfunction
+
+function! php#easy#function#switch()
+    exec "normal! oswitch () {\<CR>}"
     normal! kf)
 
     call php#easy#insert#insert("")
