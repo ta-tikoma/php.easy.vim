@@ -24,7 +24,12 @@ function! php#easy#other#doc()
     call php#easy#position#remember()
 
     call search("^    \\(private\\|public\\|protected\\) function", "bW")
-    exec "normal O/**\<CR> \<CR>/"
+    exec "normal! O/**\<CR> \<CR>/"
     normal! k
     call php#easy#insert#append("php#easy#position#restore()")
+endfunction
+
+" append space
+function! php#easy#other#space()
+    exec "normal! o"
 endfunction

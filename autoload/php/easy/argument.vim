@@ -2,6 +2,7 @@
 function! php#easy#argument#append()
     call php#easy#position#remember()
 
+    normal! j
     call search("function \\w\\+(", "bew")
     call php#easy#argument#insert()
 

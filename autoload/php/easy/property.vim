@@ -6,10 +6,8 @@ function! php#easy#property#append(visibility)
     let l:lastProperty = search("^    \\(private\\|public\\|protected\\) \\$", 'b')
     if l:lastProperty == 0
         let l:beginOfClass = search("^{")
-        call php#easy#position#ifBelowAppendLines(5)
         exec "normal! o/**"
     else
-        call php#easy#position#ifBelowAppendLines(5)
         exec "normal! o\<CR>/**"
     endif
     exec "normal! o@var "
