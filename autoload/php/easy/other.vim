@@ -24,8 +24,8 @@ function! php#easy#other#doc()
     call php#easy#position#remember()
 
     call search("^    \\(private\\|public\\|protected\\) function", "bW")
-    exec "normal! O/**\<CR> \<CR>/"
-    normal! k
+    let @p = "    /**\n     * \n     */\n"
+    normal "pPj
     call php#easy#insert#append("php#easy#position#restore()")
 endfunction
 

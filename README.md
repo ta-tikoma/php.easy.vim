@@ -40,7 +40,7 @@ php#easy#insert#is()
 | **Method**        |||
 | `<C-p>m`          | `php#easy#method#append()`                | **A**ppend new **m**ethod after current function | ✅ |
 | `<C-p>M`          | `php#easy#method#prepend()`               | **P**reppend new **m**ethod before current function | ✅ |
-| `<C-p>sm`         |                                           | **A**ppend new **s**tatic **m**ethod after current function | ✅ |
+| `<C-p>sm`         |                                           | **A**ppend new **s**tatic **m**ethod after current function | |
 |                   | `php#easy#method#copy()`                  | **Y**ank (copy) **m**ethod under cursor | ✅ |
 |                   | `php#easy#method#replica()`               | **R**eplica **m**ethod: Copy function under cursor, paste after current and trigger rename function | ✅ |
 |                   | `php#easy#method#delete()`                | **D**elete **m**ethod under cursor | ✅ |
@@ -68,7 +68,7 @@ php#easy#insert#is()
 | `<C-p>l`          | `php#easy#other#log()`                    | Append on new line print structure for debug | ✅ |
 | `<C-p>v`          | `php#easy#other#changeVisibility()`       | Change **v**isibiliti property or function on current line *(Can use `.`)* | ✅ |
 | `<C-p><C-p>`      | `php#easy#other#doc()`                    | **A**dd **d**oc-block before current function or property | ✅ |
-| `<C-p><space>`    | `php#easy#other#space()`                  | Append space after this line | ✅ |
+|                   | `php#easy#other#space()`                  | Append space after this line | ✅ |
 | **Navigation**    |||
 |                   | `php#easy#navigation#next()`              | Jump to next method or property | ✅ |
 |                   | `php#easy#navigation#prev()`              | Jump to next method or property | ✅ |

@@ -44,13 +44,12 @@ if g:phpEasyUseDefaultKeyBinding
     nmap <C-p>l :call php#easy#other#log()<CR>
     nmap <C-p>v :call php#easy#other#changeVisibility()<CR>
     nmap <C-p><C-p> :call php#easy#other#doc()<CR>
-    nmap <C-p><space> :call php#easy#other#space()<CR>
 
     " navigation
-    " nmap = :call php#easy#navigation#methodNext()<CR>
-    " nmap - :call php#easy#navigation#methodPrev()<CR>
-    " nmap _ :call php#easy#navigation#propertyNext()<CR>
-    " nmap + :call php#easy#navigation#propertyPrev()<CR>
+    nmap = :call php#easy#navigation#methodNext()<CR>
+    nmap - :call php#easy#navigation#methodPrev()<CR>
+    nmap _ :call php#easy#navigation#propertyNext()<CR>
+    nmap + :call php#easy#navigation#propertyPrev()<CR>
 endif
 
 augroup php_easy_insert_end
