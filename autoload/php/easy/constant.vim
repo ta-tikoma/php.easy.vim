@@ -12,3 +12,15 @@ function! php#easy#constant#append()
 
     call php#easy#insert#insert("")
 endfunction
+
+" copy constant
+function! php#easy#constant#copy()
+endfunction
+
+" replica constant
+function! php#easy#constant#replica()
+endfunction
+
+" delete constant
+function! php#easy#constant#delete()
+endfunction

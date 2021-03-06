@@ -27,10 +27,9 @@ php#easy#insert#is()
 | Default Key Binding | Function | Description | Done |
 | --- | --- | --- | --- |
 | **Any**           |                                           | function or property or constant | |
-| `<C-p>y`          |                                           | **Y**ank (copy) *any* under cursor | |
-| `<C-p>r`          |                                           | **R**eplica *any*: Copy under cursor, paste after current and trigger rename function | |
-| `<C-p>d`          |                                           | **D**elete *any* under cursor | |
-| `<C-p>nc`         |                                           | **N**ame **c**hange *any* under cursor | |
+| `<C-p>y`          | `php#easy#any#copy`                       | **Y**ank (copy) *any* under cursor | |
+| `<C-p>r`          | `php#easy#any#replica`                    | **R**eplica *any*: Copy under cursor, paste after current and trigger rename function | |
+| `<C-p>d`          | `php#easy#any#delete`                     | **D**elete *any* under cursor | |
 | **Constants**     |||
 | `<C-p>c`          | `php#easy#constant#append()`              | **A**ppend **c**onstant | ✅ |
 | **Function**      |||
@@ -41,11 +40,11 @@ php#easy#insert#is()
 | **Method**        |||
 | `<C-p>m`          | `php#easy#method#append()`                | **A**ppend new **m**ethod after current function | ✅ |
 | `<C-p>M`          | `php#easy#method#prepend()`               | **P**reppend new **m**ethod before current function | ✅ |
-| `<C-p>sm`         |                                           | **A**ppend new static **m**ethod after current function | ✅ |
-| `<C-p>ym`         | `php#easy#method#copy()`                  | **Y**ank (copy) **m**ethod under cursor | ✅ |
-| `<C-p>rm`         | `php#easy#method#replica()`               | **R**eplica **m**ethod: Copy function under cursor, paste after current and trigger rename function | ✅ |
-| `<C-p>dm`         | `php#easy#method#delete()`                | **D**elete **m**ethod under cursor | ✅ |
-| `<C-p>rnm`        | `php#easy#method#rename()`                | **R**e**n**ame **m**ethod under cursor | ✅ |
+| `<C-p>sm`         |                                           | **A**ppend new **s**tatic **m**ethod after current function | ✅ |
+|                   | `php#easy#method#copy()`                  | **Y**ank (copy) **m**ethod under cursor | ✅ |
+|                   | `php#easy#method#replica()`               | **R**eplica **m**ethod: Copy function under cursor, paste after current and trigger rename function | ✅ |
+|                   | `php#easy#method#delete()`                | **D**elete **m**ethod under cursor | ✅ |
+|                   | `php#easy#method#rename()`                | **R**e**n**ame **m**ethod under cursor | ✅ |
 | **Argument**      |||
 | `<C-p>a`          | `php#easy#argument#append()`              | **A**ppend new **a**rgument in current function | ✅ |
 | `<C-p>da{1-4}`    | `php#easy#argument#delete()`              | **D**elete **a**rgument by number in current function | ✅ |
@@ -54,15 +53,17 @@ php#easy#insert#is()
 | **Property**      |||
 | `<C-p>p`          | `php#easy#property#append("private")`     | **A**ppend private **p**roperty to current class. *You can use `.` for add another property if install [vim-repeat](https://github.com/tpope/vim-repeat)* | ✅ |
 | `<C-p>P`          | `php#easy#property#append("public")`      | **A**ppend public **p**roperty to current class | ✅ |
-| `<C-p>dp`         |                                           | Delete property under cursor | |
-| `<C-p>yp`         |                                           | Copy property under cursor | |
-| `<C-p>rp`         |                                           | Copy property under cursor and paste after | |
+| `<C-p>sp`         |                                           | **A**ppend public **s**tatic **p**roperty to current class |  |
+|                   |                                           | Delete property under cursor | |
+|                   |                                           | Copy property under cursor | |
+|                   |                                           | Copy property under cursor and paste after | |
 | **DI**            |||
 | `<C-p>di`         | `php#easy#di#append()`                    | **A**ppend **d**epended **i**njection: add constructor to current class (if not exist), append argument and property | ✅ |
 | **Objects**       |||
 | `<C-p>ic`         | `php#easy#object#class()`                 | **I**nitialize **c**lass in current file | ✅ |
 | `<C-p>iac`        | `php#easy#object#abstractClass()`         | **I**nitialize **a**bstract **c**lass in current file | ✅ |
 | `<C-p>ii`         | `php#easy#object#interface()`             | **I**nitialize **i**nterface in current file | ✅ |
+| `<C-p>it`         | `php#easy#object#trait()`                 | **I**nitialize **t**rait in current file | ✅ |
 | **Other**         |||
 | `<C-p>l`          | `php#easy#other#log()`                    | Append on new line print structure for debug | ✅ |
 | `<C-p>v`          | `php#easy#other#changeVisibility()`       | Change **v**isibiliti property or function on current line *(Can use `.`)* | ✅ |

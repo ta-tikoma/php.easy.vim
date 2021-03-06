@@ -26,3 +26,15 @@ function! php#easy#property#end2(visibility)
 
     silent! call repeat#set(":call php#easy#property#append(\"" . a:visibility . "\")\<CR>", v:count)
 endfunction
+
+" copy property
+function! php#easy#property#copy()
+endfunction
+
+" replica property
+function! php#easy#property#replica()
+endfunction
+
+" delete property
+function! php#easy#property#delete()
+endfunction

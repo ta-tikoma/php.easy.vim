@@ -38,8 +38,6 @@ endfunction
 
 " copy function
 function! php#easy#method#copy()
-    call php#easy#position#remember()
-
     call search("^    \\(private\\|public\\|protected\\) function", "b")
     " docs
     normal! k
@@ -52,8 +50,6 @@ function! php#easy#method#copy()
     normal! V
     call search("^    }", "e")
     normal! y
-
-    call php#easy#position#restore()
 endfunction
 
 " duplicate function

@@ -5,21 +5,17 @@
 let g:phpEasyUseDefaultKeyBinding = get(g:, 'phpEasyUseDefaultKeyBinding', 1)
 
 if g:phpEasyUseDefaultKeyBinding
-    " function
-    nmap <C-p>c :call php#easy#constant#append()<CR>
+    " any
+    nmap <C-p>y :call php#easy#any#copy()<CR>
+    nmap <C-p>r :call php#easy#any#replica()<CR>
+    nmap <C-p>d :call php#easy#any#delete()<CR>
 
     " function
-    " nmap <C-p>af :call php#easy#function#foreach()<CR>
-    " nmap <C-p>ai :call php#easy#function#if()<CR>
-    " nmap <C-p>ae :call php#easy#function#else()<CR>
-    " nmap <C-p>as :call php#easy#function#switch()<CR>
+    nmap <C-p>c :call php#easy#constant#append()<CR>
 
     " method
     nmap <C-p>m :call php#easy#method#append()<CR>
     nmap <C-p>M :call php#easy#method#prepend()<CR>
-    nmap <C-p>ym :call php#easy#method#copy()<CR>
-    nmap <C-p>rm :call php#easy#method#replica()<CR>
-    nmap <C-p>dm :call php#easy#method#delete()<CR>
     nmap <C-p>rnm :call php#easy#method#rename()<CR>
 
     " argument
@@ -38,10 +34,11 @@ if g:phpEasyUseDefaultKeyBinding
     " di
     nmap <C-p>di :call php#easy#di#append()<CR>
 
-    " object
+    " init object
     nmap <C-p>ic :call php#easy#object#class()<CR>
     nmap <C-p>iac :call php#easy#object#abstractClass()<CR>
     nmap <C-p>ii :call php#easy#object#interface()<CR>
+    nmap <C-p>it :call php#easy#object#trait()<CR>
 
     " other
     nmap <C-p>l :call php#easy#other#log()<CR>
@@ -50,10 +47,10 @@ if g:phpEasyUseDefaultKeyBinding
     nmap <C-p><space> :call php#easy#other#space()<CR>
 
     " navigation
-    nmap = :call php#easy#navigation#methodNext()<CR>
-    nmap - :call php#easy#navigation#methodPrev()<CR>
-    nmap _ :call php#easy#navigation#propertyNext()<CR>
-    nmap + :call php#easy#navigation#propertyPrev()<CR>
+    " nmap = :call php#easy#navigation#methodNext()<CR>
+    " nmap - :call php#easy#navigation#methodPrev()<CR>
+    " nmap _ :call php#easy#navigation#propertyNext()<CR>
+    " nmap + :call php#easy#navigation#propertyPrev()<CR>
 endif
 
 augroup php_easy_insert_end
