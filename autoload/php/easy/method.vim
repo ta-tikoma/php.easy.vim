@@ -89,18 +89,13 @@ endfunction
 
 " append constructor
 function! php#easy#method#construct()
-    normal G
-    let lastProperty = search("^    \\(private\\|public\\|protected\\) \\$", 'b')
-    call s:PhpInsertFunction('__construct', lastProperty)
-endfunction
-
-" insert function
-function! s:PhpInsertFunction(name, lastFunction)
-    if a:lastFunction == 0
-        let endOfClass = search("^}")
-        exec "normal O\<CR>public function " . a:name . "()\<CR>{\<CR>}"
+    normal gg
+    let l:firstMethod = search("^    \\(private\\|public\\|protected\\) function")
+    if l:firstMethod == 0
+        normal G
+        let l:lastProperty = search("^    \\(private\\|public\\|protected\\) \\$", "b")
+        exec "normal o\<CR>public function __construct()\<CR>{\<CR>}"
     else
-        exec "normal o\<CR>public function " . a:name . "()\<CR>{\<CR>}"
+        exec "normal O\<CR>public function __construct()\<CR>{\<CR>}\<CR>"
     endif
-    " let functionName = search("public function " . a:name . "()", "e")
 endfunction
