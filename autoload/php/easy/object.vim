@@ -20,7 +20,37 @@ endfunction
 
 function! s:PhpObject(type)
     let l:file = expand('%:t:r') 
-    let l:path = substitute(fnamemodify(expand("%:p:h"), ":~:."), '/', '\', 'g') 
+    let l:path = fnamemodify(expand("%:p:h"), ":~:.")
+
+    let l:composerPath = getcwd() . '/composer.json'
+    if filereadable(l:composerPath)
+        let l:composer = readfile(l:composerPath)
+        let l:psr4 = {}
+        let l:is_psr4 = 0
+        for l:line in l:composer
+            if l:line == '        }'
+                let l:is_psr4 = 0
+            endif
+
+            if l:is_psr4
+                let l:line = trim(l:line)
+                let l:parts = split(l:line, ':')
+                let l:psr4[trim(l:parts[0], " \"\,\\")] = trim(l:parts[1], " \"\,\/")
+            endif
+
+            if l:line == '        "psr-4": {'
+                let l:is_psr4 = 1
+            endif
+        endfor
+
+        if !empty(l:psr4)
+            for key in keys(l:psr4)
+                let l:path = substitute(l:path, l:psr4[key], key, 'g') 
+            endfor
+        endif
+    endif
+
+    let l:path = substitute(l:path, '/', '\', 'g') 
 
     let l:namespaceBegin = search("^namespace ", "w")
 
