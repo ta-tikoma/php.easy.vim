@@ -29,12 +29,42 @@ endfunction
 
 " copy property
 function! php#easy#property#copy()
+    " docs
+    normal! k
+    if match(getline("."), "^    *") != -1
+        call search("^    /", "b")
+    else
+        normal! j
+    endif
+
+    normal! V
+    call search("^    \\(private\\|public\\|protected\\) \\$", 'e')
+    normal! y
 endfunction
 
 " replica property
 function! php#easy#property#replica()
+    call php#easy#property#copy()
+
+    call search("^    \\(private\\|public\\|protected\\) \\$", 'e')
+    exec "normal! o"
+    normal! pzz
+    call search("^    \\(private\\|public\\|protected\\) \\$", 'e')
+    exec "normal! ldw"
+    startinsert
 endfunction
 
 " delete property
 function! php#easy#property#delete()
+    " docs
+    normal! k
+    if match(getline("."), "^    *") != -1
+        call search("^    /", "b")
+    else
+        normal! j
+    endif
+
+    normal! V
+    call search("^    \\(private\\|public\\|protected\\) \\$", 'e')
+    normal! d
 endfunction

@@ -38,9 +38,9 @@ php#easy#insert#is()
 |                   | `php#easy#function#else()`                | **A**ppend **e**lse |
 |                   | `php#easy#function#switch`                | **A**ppend **s**wich |
 | **Method**        |||
-| `<C-p>m`          | `php#easy#method#append()`                | **A**ppend new **m**ethod after current function |
-| `<C-p>M`          | `php#easy#method#prepend()`               | **P**reppend new **m**ethod before current function |
-| `<C-p>sm`         |                                           | **A**ppend new **s**tatic **m**ethod after current function |
+|                   | `php#easy#method#append()`                | **A**ppend new **m**ethod after current function |
+|                   | `php#easy#method#prepend()`               | **P**reppend new **m**ethod before current function |
+|                   |                                           | **A**ppend new **s**tatic **m**ethod after current function |
 |                   | `php#easy#method#copy()`                  | **Y**ank (copy) **m**ethod under cursor |
 |                   | `php#easy#method#replica()`               | **R**eplica **m**ethod: Copy function under cursor, paste after current and trigger rename function |
 |                   | `php#easy#method#delete()`                | **D**elete **m**ethod under cursor |
@@ -48,8 +48,8 @@ php#easy#insert#is()
 | **Argument**      |||
 | `<C-p>a`          | `php#easy#argument#append()`              | **A**ppend new **a**rgument in current function |
 | `<C-p>da{1-4}`    | `php#easy#argument#delete()`              | **D**elete **a**rgument by number in current function |
-| `<C-p>ca{1-4}`    |                                           | Change argament by number in current function |
-| `<C-p>cat{1-4}`   |                                           | Change argument type by number in current function |
+|                   |                                           | Change argament by number in current function |
+|                   |                                           | Change argument type by number in current function |
 | **Property**      |||
 | `<C-p>p`          | `php#easy#property#append("private")`     | **A**ppend private **p**roperty to current class. *You can use `.` for add another property if install [vim-repeat](https://github.com/tpope/vim-repeat)* |
 | `<C-p>P`          | `php#easy#property#append("public")`      | **A**ppend public **p**roperty to current class |
@@ -78,3 +78,5 @@ php#easy#insert#is()
 | `_`               | `php#easy#navigation#propertyPrev()`      | Jump to prev property |
 
 # Examples
+
+...

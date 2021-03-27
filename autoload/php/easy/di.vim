@@ -48,7 +48,8 @@ function! php#easy#di#end()
         let l:typeAndName = split(trim(argument))
         let l:propertyExist = search("^    \\(private\\|public\\|protected\\) " . l:typeAndName[1], 'wn')
         if l:propertyExist == 0
-            exec "normal! o/**\<CR>@var " . l:typeAndName[0] . "\<CR>/\<CR>private " . l:typeAndName[1] . ";"
+            let @p = "\n    /**\n     * @var " . l:typeAndName[0] . "\n     */\nprivate " . l:typeAndName[1] . ";"
+            normal "pp
         endif
     endfor
 

@@ -10,13 +10,8 @@ if g:phpEasyUseDefaultKeyBinding
     nmap <C-p>r :call php#easy#any#replica()<CR>
     nmap <C-p>d :call php#easy#any#delete()<CR>
 
-    " function
+    " constant
     nmap <C-p>c :call php#easy#constant#append()<CR>
-
-    " method
-    nmap <C-p>m :call php#easy#method#append()<CR>
-    nmap <C-p>M :call php#easy#method#prepend()<CR>
-    nmap <C-p>rnm :call php#easy#method#rename()<CR>
 
     " argument
     nmap <C-p>a :call php#easy#argument#append()<CR>
@@ -24,8 +19,6 @@ if g:phpEasyUseDefaultKeyBinding
     nmap <C-p>da2 :call php#easy#argument#delete(2)<CR>
     nmap <C-p>da3 :call php#easy#argument#delete(3)<CR>
     nmap <C-p>da4 :call php#easy#argument#delete(4)<CR>
-    " nmap <C-p>ca1 :call PhpChangeArgument(1)<CR>
-    " nmap <C-p>cat1 :call PhpChangeArgumentType(1)<CR>
 
     " property
     nmap <C-p>p :call php#easy#property#append("private")<CR>
