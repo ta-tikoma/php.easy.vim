@@ -79,4 +79,22 @@ php#easy#insert#is()
 
 # Examples
 
-...
+## <C-p>ic
+
+![<C-p>ic](https://github.com/ta-tikoma/php.easy.vim/blob/main/examples/c-p-ic.gif?raw=true)
+
+## <C-p>p
+
+![<C-p>p](https://github.com/ta-tikoma/php.easy.vim/blob/main/examples/c-p-p.gif?raw=true)
+
+## <C-p>di
+
+![<C-p>di](https://github.com/ta-tikoma/php.easy.vim/blob/main/examples/c-p-di.gif?raw=true)
+
+## <C-p>r
+
+![<C-p>r](https://github.com/ta-tikoma/php.easy.vim/blob/main/examples/c-p-r.gif?raw=true)
+
+## <C-p>d
+
+![<C-p>d](https://github.com/ta-tikoma/php.easy.vim/blob/main/examples/c-p-d.gif?raw=true)
