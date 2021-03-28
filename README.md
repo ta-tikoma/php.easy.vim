@@ -79,22 +79,22 @@ php#easy#insert#is()
 
 # Examples
 
-## <C-p>ic
+## Init class `<C-p>ic`
 
-![<C-p>ic](https://github.com/ta-tikoma/php.easy.vim/blob/main/examples/c-p-ic.gif?raw=true)
+![init class](https://raw.githubusercontent.com/ta-tikoma/php.easy.vim/main/example/c-p-ic.gif)
 
-## <C-p>p
+## Add private property `<C-p>p`
 
-![<C-p>p](https://github.com/ta-tikoma/php.easy.vim/blob/main/examples/c-p-p.gif?raw=true)
+![add private property](https://raw.githubusercontent.com/ta-tikoma/php.easy.vim/main/example/c-p-p.gif)
 
-## <C-p>di
+## Add depended injection `<C-p>di`
 
-![<C-p>di](https://github.com/ta-tikoma/php.easy.vim/blob/main/examples/c-p-di.gif?raw=true)
+![add depended injection ](https://raw.githubusercontent.com/ta-tikoma/php.easy.vim/main/example/c-p-di.gif)
 
-## <C-p>r
+## Replicate function `<C-p>r`
 
-![<C-p>r](https://github.com/ta-tikoma/php.easy.vim/blob/main/examples/c-p-r.gif?raw=true)
+![replicate function](https://raw.githubusercontent.com/ta-tikoma/php.easy.vim/main/example/c-p-r.gif)
 
-## <C-p>d
+## Delete function `<C-p>d`
 
-![<C-p>d](https://github.com/ta-tikoma/php.easy.vim/blob/main/examples/c-p-d.gif?raw=true)
+![delete function](https://raw.githubusercontent.com/ta-tikoma/php.easy.vim/main/example/c-p-d.gif)
