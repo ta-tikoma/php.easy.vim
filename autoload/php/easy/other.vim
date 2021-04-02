@@ -23,6 +23,7 @@ endfunction
 function! php#easy#other#doc()
     call php#easy#position#remember()
 
+    normal! j
     call search("^    \\(private\\|public\\|protected\\) function", "bW")
     let @p = "    /**\n     * \n     */\n"
     normal "pPj
