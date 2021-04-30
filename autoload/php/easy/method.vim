@@ -1,47 +1,10 @@
-" append function
-function! php#easy#method#append()
-    normal! k
-    let l:lastFunction = search("^    }")
-    if l:lastFunction == 0
-        call search("^}")
-        exec "normal! Opublic function ()\<CR>{\<CR>}"
-    else
-        exec "normal! o\<CR>public function ()\<CR>{\<CR>}"
-    endif
-    normal! kk$xx
-
-    call php#easy#insert#append("php#easy#method#end()")
-endfunction
-
-function! php#easy#method#end()
-    call search("{")
-    " exec "normal! O "
-
-    " startinsert!
-endfunction
-
-" prepend function
-function! php#easy#method#prepend()
-    normal! j 
-    let l:lastFunction = search("^    \\(private\\|public\\|protected\\) function", 'b')
-    if l:lastFunction == 0
-        call search("^}")
-        exec "normal! Opublic function ()\<CR>{\<CR>}"
-    else
-        exec "normal! O"
-        exec "normal! Opublic function ()\<CR>{\<CR>}"
-    endif
-    normal! kk$xx
-
-    call php#easy#insert#append("php#easy#method#end()")
-endfunction
-
 " copy function
 function! php#easy#method#copy()
+    normal! j
     call search("^    \\(private\\|public\\|protected\\) function", "b")
     " docs
     normal! k
-    if match(getline("."), "^    *") != -1
+    if match(getline("."), '^\s\{5}\*') != -1
         call search("^    /", "b")
     else
         normal! j
@@ -66,6 +29,7 @@ endfunction
 
 " rename function
 function! php#easy#method#rename()
+    normal! j
     call search("^    \\(private\\|public\\|protected\\) function", "be")
     exec "normal! wdw"
     startinsert
@@ -73,10 +37,11 @@ endfunction
 
 " delete function
 function! php#easy#method#delete()
+    normal! j
     call search("^    \\(private\\|public\\|protected\\) function", "b")
     " docs
     normal! k
-    if match(getline("."), "^    *") != -1
+    if match(getline("."), '^\s\{5}\*') != -1
         call search("^    /", "b")
     else
         normal! j
@@ -85,6 +50,21 @@ function! php#easy#method#delete()
     normal! V
     call search("^    }", "e")
     normal! d
+endfunction
+
+" doc function
+function! php#easy#method#doc()
+    normal! j
+    call search("^    \\(private\\|public\\|protected\\) function", "b")
+    normal! k
+    if match(getline("."), '^\s\{5}\*') != -1
+        echom 'insert in to comment'
+    else
+        normal! j
+        let @p = "    /**\n     * \n     */\n"
+        normal "pPj
+        call php#easy#insert#append("")
+    endif
 endfunction
 
 " append constructor

@@ -1,6 +1,6 @@
 " append property
 function! php#easy#property#append(visibility)
-    call php#easy#position#remember()
+    call php#easy#helpers#position#remember()
 
     normal G
     let l:lastProperty = search("^    \\(private\\|public\\|protected\\) \\$", 'b')
@@ -22,7 +22,7 @@ function! php#easy#property#end(visibility)
 endfunction
 
 function! php#easy#property#end2(visibility)
-    call php#easy#position#restore()
+    call php#easy#helpers#position#restore()
 
     silent! call repeat#set(":call php#easy#property#append(\"" . a:visibility . "\")\<CR>", v:count)
 endfunction
@@ -31,7 +31,7 @@ endfunction
 function! php#easy#property#copy()
     " docs
     normal! k
-    if match(getline("."), "^    *") != -1
+    if match(getline("."), '^\s\{5}\*') != -1
         call search("^    /", "b")
     else
         normal! j
@@ -58,7 +58,7 @@ endfunction
 function! php#easy#property#delete()
     " docs
     normal! k
-    if match(getline("."), "^    *") != -1
+    if match(getline("."), '^\s\{5}\*') != -1
         call search("^    /", "b")
     else
         normal! j
@@ -67,4 +67,17 @@ function! php#easy#property#delete()
     normal! V
     call search("^    \\(private\\|public\\|protected\\) \\$", 'e')
     normal! d
+endfunction
+
+" doc property
+function! php#easy#property#doc()
+    normal! k
+    if match(getline("."), '^\s\{5}\*') != -1
+        echom 'insert in to comment property'
+    else
+        normal! jj
+        let @p = "    /**\n     * \n     */\n"
+        normal "pPj
+        call php#easy#insert#append("")
+    endif
 endfunction

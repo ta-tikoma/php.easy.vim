@@ -1,6 +1,6 @@
 " append dependency injection
 function! php#easy#di#append()
-    call php#easy#position#remember()
+    call php#easy#helpers#position#remember()
 
     " find or create constructor
     let l:constructorBegin = search('public function __construct(', 'ew')
@@ -45,13 +45,12 @@ function! php#easy#di#end()
         exec "normal! o"
     endif
     for argument in l:arguments
-        let l:typeAndName = split(trim(argument))
-        let l:propertyExist = search("^    \\(private\\|public\\|protected\\) " . l:typeAndName[1], 'wn')
+        let l:propertyExist = search("^    \\(private\\|public\\|protected\\) " . argument, 'wn')
         if l:propertyExist == 0
-            let @p = "\n    /**\n     * @var " . l:typeAndName[0] . "\n     */\nprivate " . l:typeAndName[1] . ";"
+            let @p = "\nprivate " . argument . ";"
             normal "pp
         endif
     endfor
 
-    call php#easy#position#restore()
+    call php#easy#helpers#position#restore()
 endfunction

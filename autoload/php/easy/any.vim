@@ -13,7 +13,7 @@ function! php#easy#any#itIs()
         call add(l:positions, l:constant)
     endif
 
-    let l:property = search("^    \\(private\\|public\\|protected\\) \\$", 'nW')
+    let l:property = search("^    \\(private\\|public\\|protected\\)\\( \\w\\+\\|\\) \\$", 'nW')
     if l:property != 0
         call add(l:positions, l:property)
     endif
@@ -73,5 +73,18 @@ function! php#easy#any#delete()
         call php#easy#constant#delete()
     elseif  l:itIs == 'property'
         call php#easy#property#delete()
+    endif
+endfunction
+
+" phpdoc
+function! php#easy#any#doc()
+    let l:itIs = php#easy#any#itIs()
+
+    if l:itIs == 'method'
+        call php#easy#method#doc()
+    elseif  l:itIs == 'constant'
+        call php#easy#constant#doc()
+    elseif  l:itIs == 'property'
+        call php#easy#property#doc()
     endif
 endfunction

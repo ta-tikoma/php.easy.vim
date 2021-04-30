@@ -1,6 +1,4 @@
 function! php#easy#constant#append()
-    call php#easy#position#remember()
-
     normal G
     let l:lastConstant = search("^    const ", 'b')
     if l:lastConstant == 0

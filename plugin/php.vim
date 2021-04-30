@@ -9,6 +9,7 @@ if g:phpEasyUseDefaultKeyBinding
     nmap <C-p>y :call php#easy#any#copy()<CR>
     nmap <C-p>r :call php#easy#any#replica()<CR>
     nmap <C-p>d :call php#easy#any#delete()<CR>
+    nmap <C-p>8 :call php#easy#any#doc()<CR>
 
     " constant
     nmap <C-p>c :call php#easy#constant#append()<CR>
@@ -36,13 +37,12 @@ if g:phpEasyUseDefaultKeyBinding
     " other
     nmap <C-p>l :call php#easy#other#log()<CR>
     nmap <C-p>v :call php#easy#other#changeVisibility()<CR>
-    nmap <C-p><C-p> :call php#easy#other#doc()<CR>
 
     " navigation
-    nmap = :call php#easy#navigation#methodNext()<CR>
-    nmap - :call php#easy#navigation#methodPrev()<CR>
-    nmap _ :call php#easy#navigation#propertyNext()<CR>
-    nmap + :call php#easy#navigation#propertyPrev()<CR>
+    " nmap = :call php#easy#navigation#methodNext()<CR>
+    " nmap - :call php#easy#navigation#methodPrev()<CR>
+    " nmap _ :call php#easy#navigation#propertyNext()<CR>
+    " nmap + :call php#easy#navigation#propertyPrev()<CR>
 endif
 
 augroup php_easy_insert_end

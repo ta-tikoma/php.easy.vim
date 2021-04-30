@@ -19,17 +19,6 @@ function! php#easy#other#changeVisibility()
     silent! call repeat#set(":call php#easy#other#changeVisibility()\<CR>", v:count)
 endfunction
 
-" prepend doc block
-function! php#easy#other#doc()
-    call php#easy#position#remember()
-
-    normal! j
-    call search("^    \\(private\\|public\\|protected\\) function", "bW")
-    let @p = "    /**\n     * \n     */\n"
-    normal "pPj
-    call php#easy#insert#append("php#easy#position#restore()")
-endfunction
-
 " append space
 function! php#easy#other#space()
     exec "normal! o"

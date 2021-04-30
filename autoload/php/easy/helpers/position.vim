@@ -3,11 +3,11 @@
 "#####################################
 
 " remember position
-function! php#easy#position#remember()
+function! php#easy#helpers#position#remember()
     normal! mp
 endfunction
 
 " restore position
-function! php#easy#position#restore()
+function! php#easy#helpers#position#restore()
     normal! `p
 endfunction
