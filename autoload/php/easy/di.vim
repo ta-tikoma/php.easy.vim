@@ -5,7 +5,7 @@ function! php#easy#di#append()
     " find or create constructor
     let l:constructorBegin = search('public function __construct(', 'ew')
     if l:constructorBegin == 0
-        call php#easy#method#construct()
+        call php#easy#di#construct()
         call search('public function __construct(', 'ew')
     endif
 
@@ -53,4 +53,17 @@ function! php#easy#di#end()
     endfor
 
     call php#easy#helpers#position#restore()
+endfunction
+
+" append constructor
+function! php#easy#di#construct()
+    normal gg
+    let l:firstMethod = search("^    \\(private\\|public\\|protected\\) function")
+    if l:firstMethod == 0
+        normal G
+        let l:lastProperty = search("^    \\(private\\|public\\|protected\\) \\$", "b")
+        exec "normal o\<CR>public function __construct()\<CR>{\<CR>}"
+    else
+        exec "normal O\<CR>public function __construct()\<CR>{\<CR>}\<CR>"
+    endif
 endfunction

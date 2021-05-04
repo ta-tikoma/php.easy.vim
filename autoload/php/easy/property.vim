@@ -1,30 +1,17 @@
+let g:php#easy#property#regex = '^    \(public\)\(\s?*\w\+\|\) \$'
+
 " append property
 function! php#easy#property#append(visibility)
-    call php#easy#helpers#position#remember()
-
     normal G
-    let l:lastProperty = search("^    \\(private\\|public\\|protected\\) \\$", 'b')
+    let l:lastProperty = search(g:php#easy#property#regex, 'b')
     if l:lastProperty == 0
-        let l:beginOfClass = search("^{")
-        exec "normal! o/**"
+        call search("^{")
+        exec "normal! o" . a:visibility . " ;"
     else
-        exec "normal! o\<CR>/**"
+        exec "normal! o\<CR>" . a:visibility . " ;"
     endif
-    exec "normal! o@var "
 
-    call php#easy#insert#append("php#easy#property#end(\"" . a:visibility . "\")")
-endfunction
-
-function! php#easy#property#end(visibility)
-    exec "normal! o/\<CR>" . a:visibility . " $;"
-
-    call php#easy#insert#insert("php#easy#property#end2(\"" . a:visibility . "\")")
-endfunction
-
-function! php#easy#property#end2(visibility)
-    call php#easy#helpers#position#restore()
-
-    silent! call repeat#set(":call php#easy#property#append(\"" . a:visibility . "\")\<CR>", v:count)
+    startinsert
 endfunction
 
 " copy property
@@ -38,7 +25,7 @@ function! php#easy#property#copy()
     endif
 
     normal! V
-    call search("^    \\(private\\|public\\|protected\\) \\$", 'e')
+    call search(g:php#easy#property#regex, 'e')
     normal! y
 endfunction
 
@@ -46,10 +33,10 @@ endfunction
 function! php#easy#property#replica()
     call php#easy#property#copy()
 
-    call search("^    \\(private\\|public\\|protected\\) \\$", 'e')
+    call search(g:php#easy#property#regex, 'e')
     exec "normal! o"
     normal! pzz
-    call search("^    \\(private\\|public\\|protected\\) \\$", 'e')
+    call search(g:php#easy#property#regex, 'e')
     exec "normal! ldw"
     startinsert
 endfunction
@@ -65,7 +52,7 @@ function! php#easy#property#delete()
     endif
 
     normal! V
-    call search("^    \\(private\\|public\\|protected\\) \\$", 'e')
+    call search(g:php#easy#property#regex, 'e')
     normal! d
 endfunction
 
@@ -78,6 +65,6 @@ function! php#easy#property#doc()
         normal! jj
         let @p = "    /**\n     * \n     */\n"
         normal "pPj
-        call php#easy#insert#append("")
+        startinsert!
     endif
 endfunction

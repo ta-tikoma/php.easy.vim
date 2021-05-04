@@ -1,14 +1,17 @@
-function! php#easy#constant#append()
+let g:php#easy#constant#regex = '^    const '
+
+" append constant
+function! php#easy#constant#append(visibility)
     normal G
-    let l:lastConstant = search("^    const ", 'b')
+    let l:lastConstant = search(g:php#easy#constant#regex, 'b')
     if l:lastConstant == 0
         let l:beginOfClass = search("^{")
-        exec "normal! oconst ;"
+        exec "normal! o" . a:visibility . " const ;"
     else
-        exec "normal! o\<CR>const ;"
+        exec "normal! o\<CR>" . a:visibility . " const ;"
     endif
 
-    call php#easy#insert#insert("")
+    startinsert
 endfunction
 
 " copy constant
@@ -22,7 +25,7 @@ function! php#easy#constant#copy()
     endif
 
     normal! V
-    call search("^    const ", 'e')
+    call search(g:php#easy#constant#regex, 'e')
     normal! y
 endfunction
 
@@ -30,10 +33,10 @@ endfunction
 function! php#easy#constant#replica()
     call php#easy#constant#copy()
 
-    call search("^    const ", 'e')
+    call search(g:php#easy#constant#regex, 'e')
     exec "normal! o"
     normal! pzz
-    call search("^    const ", 'e')
+    call search(g:php#easy#constant#regex, 'e')
     exec "normal! ldw"
     startinsert
 endfunction
@@ -49,6 +52,19 @@ function! php#easy#constant#delete()
     endif
 
     normal! V
-    call search("^    const ", 'e')
+    call search(g:php#easy#constant#regex, 'e')
     normal! d
+endfunction
+
+" doc const
+function! php#easy#property#doc()
+    normal! k
+    if match(getline("."), '^\s\{5}\*') != -1
+        echom 'insert in to comment property'
+    else
+        normal! jj
+        let @p = "    /**\n     * \n     */\n"
+        normal "pPj
+        startinsert!
+    endif
 endfunction

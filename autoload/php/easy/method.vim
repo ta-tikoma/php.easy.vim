@@ -1,7 +1,23 @@
+let g:php#easy#method#regex = '^    \(private\|public\|protected\) function'
+
+" append method
+function! php#easy#method#append(visibility)
+    normal G
+    let l:lastMethod = search('^    }', 'b')
+    if l:lastMethod == 0
+        call search("^{")
+        exec "normal! o" . a:visibility . " function "
+    else
+        exec "normal! o\<CR>" . a:visibility . " function "
+    endif
+
+    startinsert!
+endfunction
+
 " copy function
 function! php#easy#method#copy()
     normal! j
-    call search("^    \\(private\\|public\\|protected\\) function", "b")
+    call search(g:php#easy#method#regex, "b")
     " docs
     normal! k
     if match(getline("."), '^\s\{5}\*') != -1
@@ -22,15 +38,7 @@ function! php#easy#method#replica()
     call search("^    }", "e")
     exec "normal! o"
     normal! pzz
-    call search("^    \\(private\\|public\\|protected\\) function", "e")
-    exec "normal! wdw"
-    startinsert
-endfunction
-
-" rename function
-function! php#easy#method#rename()
-    normal! j
-    call search("^    \\(private\\|public\\|protected\\) function", "be")
+    call search(g:php#easy#method#regex, "e")
     exec "normal! wdw"
     startinsert
 endfunction
@@ -38,7 +46,7 @@ endfunction
 " delete function
 function! php#easy#method#delete()
     normal! j
-    call search("^    \\(private\\|public\\|protected\\) function", "b")
+    call search(g:php#easy#method#regex, "b")
     " docs
     normal! k
     if match(getline("."), '^\s\{5}\*') != -1
@@ -55,7 +63,7 @@ endfunction
 " doc function
 function! php#easy#method#doc()
     normal! j
-    call search("^    \\(private\\|public\\|protected\\) function", "b")
+    call search(g:php#easy#method#regex, "b")
     normal! k
     if match(getline("."), '^\s\{5}\*') != -1
         echom 'insert in to comment'
@@ -63,19 +71,14 @@ function! php#easy#method#doc()
         normal! j
         let @p = "    /**\n     * \n     */\n"
         normal "pPj
-        call php#easy#insert#append("")
+        startinsert!
     endif
 endfunction
 
-" append constructor
-function! php#easy#method#construct()
-    normal gg
-    let l:firstMethod = search("^    \\(private\\|public\\|protected\\) function")
-    if l:firstMethod == 0
-        normal G
-        let l:lastProperty = search("^    \\(private\\|public\\|protected\\) \\$", "b")
-        exec "normal o\<CR>public function __construct()\<CR>{\<CR>}"
-    else
-        exec "normal O\<CR>public function __construct()\<CR>{\<CR>}\<CR>"
-    endif
+" rename function
+function! php#easy#method#rename()
+    normal! j
+    call search(g:php#easy#method#regex, "be")
+    exec "normal! wdw"
+    startinsert
 endfunction
