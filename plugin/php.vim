@@ -11,7 +11,7 @@ if g:phpEasyUseDefaultKeyBinding
     nmap <C-p>d :call php#easy#any#delete()<CR>
     nmap <C-p>8 :call php#easy#any#doc()<CR>
 
-    " add
+    " append
     nmap <C-p>c0 :call php#easy#constant#append("")<CR>
     nmap <C-p>c1 :call php#easy#constant#append("private")<CR>
     nmap <C-p>c2 :call php#easy#constant#append("protected")<CR>

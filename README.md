@@ -31,7 +31,7 @@ php#easy#insert#is()
 | `<C-p>r`            | `php#easy#any#replica`                    | **R**eplica *any*: Copy under cursor, paste after current and trigger rename function |
 | `<C-p>d`            | `php#easy#any#delete`                     | **D**elete *any* under cursor |
 | `<C-p>8`            | `php#easy#any#doc`                        | Php**D**ocBlock for *any* under cursor |
-| **Add**             |                                           | `{0-3}` it is visibility; 0 - nothing, 1 - private, 2 - protected, 3 - public |
+| **Append**          |                                           | `{0-3}` it is visibility; 0 - nothing, 1 - private, 2 - protected, 3 - public |
 | `<C-p>c{0-3}`       | `php#easy#constant#append()`              | **A**ppend **c**onstant |
 | `<C-p>p{0-3}`       | `php#easy#property#append()`              | **A**ppend **p**roperty |
 | `<C-p>m{0-3}`       | `php#easy#method#append()`                | **A**ppend **m**ethod |

@@ -55,7 +55,7 @@ function! s:PhpObject(type)
     let l:namespaceBegin = search("^namespace ", "w")
 
     if l:namespaceBegin == 0
-        exec "normal! i<?php\<CR>\<CR>namespace " . l:path . ";\<CR>\<CR>" . a:type . " " . l:file . "\<CR>{\<CR>}"
+        exec "normal! i<?php\<CR>\<CR>declare(strict_types=1);\<CR>\<CR>namespace " . l:path . ";\<CR>\<CR>" . a:type . " " . l:file . "\<CR>{\<CR>}"
         let className = search(a:type . " " . file, "e")
     else
         exec "normal! Cnamespace " . path . ";"
