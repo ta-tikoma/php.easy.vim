@@ -46,7 +46,10 @@ if g:phpEasyUseDefaultKeyBinding
 
     " other
     nmap <C-p>l :call php#easy#other#log()<CR>
-    nmap <C-p>v :call php#easy#other#changeVisibility()<CR>
+    nmap <C-p>v0 :call php#easy#other#changeVisibility('')<CR>
+    nmap <C-p>v1 :call php#easy#other#changeVisibility('private')<CR>
+    nmap <C-p>v2 :call php#easy#other#changeVisibility('protected')<CR>
+    nmap <C-p>v3 :call php#easy#other#changeVisibility('public')<CR>
 
     " navigation
     " nmap = :call php#easy#navigation#methodNext()<CR>

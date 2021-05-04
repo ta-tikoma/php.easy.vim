@@ -29,12 +29,12 @@ php#easy#insert#is()
 | **Any**             |                                           | function or property or constant |
 | `<C-p>y`            | `php#easy#any#copy`                       | **Y**ank (copy) *any* under cursor |
 | `<C-p>r`            | `php#easy#any#replica`                    | **R**eplica *any*: Copy under cursor, paste after current and trigger rename function |
-| `<C-p>d`            | `php#easy#any#delete`                     | **D**elete *any* under cursor | |
-| `<C-p>8`            | `php#easy#any#doc`                        | Php**D**ocBlock for *any* under cursor | |
-| **Add**             |||
+| `<C-p>d`            | `php#easy#any#delete`                     | **D**elete *any* under cursor |
+| `<C-p>8`            | `php#easy#any#doc`                        | Php**D**ocBlock for *any* under cursor |
+| **Add**             |                                           | `{0-3}` it is visibility; 0 - nothing, 1 - private, 2 - protected, 3 - public |
 | `<C-p>c{0-3}`       | `php#easy#constant#append()`              | **A**ppend **c**onstant |
-| `<C-p>p{0-3}`       | `php#easy#property#append()`              | **A**ppend **p**roperty. |
-| `<C-p>m{0-3}`       | `php#easy#method#append()`                | **A**ppend **m**ethod. |
+| `<C-p>p{0-3}`       | `php#easy#property#append()`              | **A**ppend **p**roperty |
+| `<C-p>m{0-3}`       | `php#easy#method#append()`                | **A**ppend **m**ethod |
 | `<C-p>a`            | `php#easy#argument#append()`              | **A**ppend new **a**rgument in current function |
 | **Argument**        |||
 | `<C-p>da{1-4}`      | `php#easy#argument#delete()`              | **D**elete **a**rgument by number in current function |
@@ -47,7 +47,7 @@ php#easy#insert#is()
 | `<C-p>it`           | `php#easy#object#trait()`                 | **I**nitialize **t**rait in current file |
 | **Other**           |||
 | `<C-p>l`            | `php#easy#other#log()`                    | Append on new line print structure for debug |
-| `<C-p>v{0-3}`       | `php#easy#other#changeVisibility()`       | Change **v**isibiliti property or function on current line *(Can use `.`)* |
+| `<C-p>v{0-3}`       | `php#easy#other#changeVisibility()`       | Change **v**isibiliti property or function on current line |
 | **Navigation**      |||
 |                     | `php#easy#navigation#methodNext()`        | Jump to next method |
 |                     | `php#easy#navigation#methodPrev()`        | Jump to prev method |

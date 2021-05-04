@@ -6,17 +6,8 @@ function! php#easy#other#log()
 endfunction
 
 " change private of function or property
-function! php#easy#other#changeVisibility()
-    let line = getline('.')
-    if stridx(line, 'public') != -1
-        silent :s/public/private/g
-    elseif stridx(line, 'private') != -1
-        silent :s/private/protected/g
-    elseif stridx(line, 'protected') != -1
-        silent :s/protected/public/g
-    endif
-
-    silent! call repeat#set(":call php#easy#other#changeVisibility()\<CR>", v:count)
+function! php#easy#other#changeVisibility(visibility)
+    silent exec ':s/\(private\|protected\|public\)/' . a:visibility . '/g'
 endfunction
 
 " append space
