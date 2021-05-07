@@ -1,11 +1,11 @@
-let g:php#easy#constant#regex = '^    const '
+let g:php#easy#constant#regex = '^    \(public\|protected\|private\|\) const '
 
 " append constant
 function! php#easy#constant#append(visibility)
     normal G
     let l:lastConstant = search(g:php#easy#constant#regex, 'b')
     if l:lastConstant == 0
-        let l:beginOfClass = search("^{")
+        call search('^{')
         exec "normal! o" . a:visibility . " const ;"
     else
         exec "normal! o\<CR>" . a:visibility . " const ;"
@@ -57,7 +57,7 @@ function! php#easy#constant#delete()
 endfunction
 
 " doc const
-function! php#easy#property#doc()
+function! php#easy#constant#doc()
     normal! k
     if match(getline("."), '^\s\{5}\*') != -1
         echom 'insert in to comment property'

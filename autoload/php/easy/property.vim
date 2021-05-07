@@ -1,4 +1,4 @@
-let g:php#easy#property#regex = '^    \(public\)\(\s?*\w\+\|\) \$'
+let g:php#easy#property#regex = '^    \(public\|protected\|private\)\(\s?*\w\+\|\) \$'
 
 " append property
 function! php#easy#property#append(visibility)
