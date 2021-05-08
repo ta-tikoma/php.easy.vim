@@ -6,7 +6,7 @@ function! php#easy#argument#append()
     call search("function \\w\\+(", "bew")
     call php#easy#argument#insert()
 
-    call php#easy#insert#insert("php#easy#helpers#position#restore()")
+    call php#easy#helpers#insert#insert("php#easy#helpers#position#restore()")
 endfunction
 
 " insert argument

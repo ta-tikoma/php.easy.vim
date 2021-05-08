@@ -1,9 +1,9 @@
-let g:php#easy#property#regex = '^    \(public\|protected\|private\)\(\s?*\w\+\|\) \$'
+let g:php#easy#any#property#regex = '^    \(public\|protected\|private\)\(\s?*\w\+\|\) \$'
 
 " append property
-function! php#easy#property#append(visibility)
+function! php#easy#any#property#append(visibility)
     normal G
-    let l:lastProperty = search(g:php#easy#property#regex, 'b')
+    let l:lastProperty = search(g:php#easy#any#property#regex, 'b')
     if l:lastProperty == 0
         call search("^{")
         exec "normal! o" . a:visibility . " ;"
@@ -15,7 +15,7 @@ function! php#easy#property#append(visibility)
 endfunction
 
 " copy property
-function! php#easy#property#copy()
+function! php#easy#any#property#copy()
     " docs
     normal! k
     if match(getline("."), '^\s\{5}\*') != -1
@@ -25,24 +25,24 @@ function! php#easy#property#copy()
     endif
 
     normal! V
-    call search(g:php#easy#property#regex, 'e')
+    call search(g:php#easy#any#property#regex, 'e')
     normal! y
 endfunction
 
 " replica property
-function! php#easy#property#replica()
-    call php#easy#property#copy()
+function! php#easy#any#property#replica()
+    call php#easy#any#property#copy()
 
-    call search(g:php#easy#property#regex, 'e')
+    call search(g:php#easy#any#property#regex, 'e')
     exec "normal! o"
     normal! pzz
-    call search(g:php#easy#property#regex, 'e')
+    call search(g:php#easy#any#property#regex, 'e')
     exec "normal! ldw"
     startinsert
 endfunction
 
 " delete property
-function! php#easy#property#delete()
+function! php#easy#any#property#delete()
     " docs
     normal! k
     if match(getline("."), '^\s\{5}\*') != -1
@@ -52,12 +52,12 @@ function! php#easy#property#delete()
     endif
 
     normal! V
-    call search(g:php#easy#property#regex, 'e')
+    call search(g:php#easy#any#property#regex, 'e')
     normal! d
 endfunction
 
 " doc property
-function! php#easy#property#doc()
+function! php#easy#any#property#doc()
     normal! k
     if match(getline("."), '^\s\{5}\*') != -1
         echom 'insert in to comment property'

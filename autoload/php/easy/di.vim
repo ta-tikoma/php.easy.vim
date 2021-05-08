@@ -11,7 +11,7 @@ function! php#easy#di#append()
 
     call php#easy#argument#insert()
 
-    call php#easy#insert#insert("php#easy#di#end()")
+    call php#easy#helpers#insert#insert("php#easy#di#end()")
 endfunction
 
 function! php#easy#di#end()

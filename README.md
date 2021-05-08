@@ -19,7 +19,7 @@ let g:phpEasyUseDefaultKeyBinding = 0
 ## If you need check stack fucntions of php#easy
 
 ```vim
-php#easy#insert#is()
+php#easy#helpers#insert#is()
 ```
 
 # Features
@@ -27,14 +27,14 @@ php#easy#insert#is()
 | Default Key Binding | Function  | Description |
 | --- | --- | --- |
 | **Any**             |                                           | function or property or constant |
-| `<C-p>y`            | `php#easy#any#copy`                       | **Y**ank (copy) *any* under cursor |
-| `<C-p>r`            | `php#easy#any#replica`                    | **R**eplica *any*: Copy under cursor, paste after current and trigger rename function |
-| `<C-p>d`            | `php#easy#any#delete`                     | **D**elete *any* under cursor |
-| `<C-p>8`            | `php#easy#any#doc`                        | Php**D**ocBlock for *any* under cursor |
+| `<C-p>y`            | `php#easy#any#orchestrator#copy`          | **Y**ank (copy) *any* under cursor |
+| `<C-p>r`            | `php#easy#any#orchestrator#replica`       | **R**eplica *any*: Copy under cursor, paste after current and trigger rename function |
+| `<C-p>d`            | `php#easy#any#orchestrator#delete`        | **D**elete *any* under cursor |
+| `<C-p>8`            | `php#easy#any#orchestrator#doc`           | Php**D**ocBlock for *any* under cursor |
 | **Append**          |                                           | `{0-3}` it is visibility; 0 - nothing, 1 - private, 2 - protected, 3 - public |
-| `<C-p>c{0-3}`       | `php#easy#constant#append()`              | **A**ppend **c**onstant |
-| `<C-p>p{0-3}`       | `php#easy#property#append()`              | **A**ppend **p**roperty |
-| `<C-p>m{0-3}`       | `php#easy#method#append()`                | **A**ppend **m**ethod |
+| `<C-p>c{0-3}`       | `php#easy#any#constant#append()`              | **A**ppend **c**onstant |
+| `<C-p>p{0-3}`       | `php#easy#any#property#append()`              | **A**ppend **p**roperty |
+| `<C-p>m{0-3}`       | `php#easy#any#method#append()`                | **A**ppend **m**ethod |
 | `<C-p>a`            | `php#easy#argument#append()`              | **A**ppend new **a**rgument in current function |
 | **Argument**        |||
 | `<C-p>da{1-4}`      | `php#easy#argument#delete()`              | **D**elete **a**rgument by number in current function |
