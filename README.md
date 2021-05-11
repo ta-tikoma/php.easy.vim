@@ -32,9 +32,9 @@ php#easy#helpers#insert#is()
 | `<C-p>d`            | `php#easy#any#orchestrator#delete`        | **D**elete *any* under cursor |
 | `<C-p>8`            | `php#easy#any#orchestrator#doc`           | Php**D**ocBlock for *any* under cursor |
 | **Append**          |                                           | `{0-3}` it is visibility; 0 - nothing, 1 - private, 2 - protected, 3 - public |
-| `<C-p>c{0-3}`       | `php#easy#any#constant#append()`              | **A**ppend **c**onstant |
-| `<C-p>p{0-3}`       | `php#easy#any#property#append()`              | **A**ppend **p**roperty |
-| `<C-p>m{0-3}`       | `php#easy#any#method#append()`                | **A**ppend **m**ethod |
+| `<C-p>c{0-3}`       | `php#easy#any#entities#constant#append()` | **A**ppend **c**onstant |
+| `<C-p>p{0-3}`       | `php#easy#any#entities#property#append()` | **A**ppend **p**roperty |
+| `<C-p>m{0-3}`       | `php#easy#any#entities#method#append()`   | **A**ppend **m**ethod |
 | `<C-p>a`            | `php#easy#argument#append()`              | **A**ppend new **a**rgument in current function |
 | **Argument**        |||
 | `<C-p>da{1-4}`      | `php#easy#argument#delete()`              | **D**elete **a**rgument by number in current function |

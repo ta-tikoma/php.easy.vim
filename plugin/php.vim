@@ -12,20 +12,20 @@ if g:phpEasyUseDefaultKeyBinding
     nmap <C-p>8 :call php#easy#any#orchestrator#doc()<CR>
 
     " append
-    nmap <C-p>c0 :call php#easy#any#constant#append("")<CR>
-    nmap <C-p>c1 :call php#easy#any#constant#append("private")<CR>
-    nmap <C-p>c2 :call php#easy#any#constant#append("protected")<CR>
-    nmap <C-p>c3 :call php#easy#any#constant#append("public")<CR>
+    nmap <C-p>c0 :call php#easy#any#entities#constant#append("")<CR>
+    nmap <C-p>c1 :call php#easy#any#entities#constant#append("private")<CR>
+    nmap <C-p>c2 :call php#easy#any#entities#constant#append("protected")<CR>
+    nmap <C-p>c3 :call php#easy#any#entities#constant#append("public")<CR>
 
-    nmap <C-p>p0 :call php#easy#any#property#append("")<CR>
-    nmap <C-p>p1 :call php#easy#any#property#append("private")<CR>
-    nmap <C-p>p2 :call php#easy#any#property#append("protected")<CR>
-    nmap <C-p>p3 :call php#easy#any#property#append("public")<CR>
+    nmap <C-p>p0 :call php#easy#any#entities#property#append("")<CR>
+    nmap <C-p>p1 :call php#easy#any#entities#property#append("private")<CR>
+    nmap <C-p>p2 :call php#easy#any#entities#property#append("protected")<CR>
+    nmap <C-p>p3 :call php#easy#any#entities#property#append("public")<CR>
 
-    nmap <C-p>m0 :call php#easy#any#method#append("")<CR>
-    nmap <C-p>m1 :call php#easy#any#method#append("private")<CR>
-    nmap <C-p>m2 :call php#easy#any#method#append("protected")<CR>
-    nmap <C-p>m3 :call php#easy#any#method#append("public")<CR>
+    nmap <C-p>m0 :call php#easy#any#entities#method#append("")<CR>
+    nmap <C-p>m1 :call php#easy#any#entities#method#append("private")<CR>
+    nmap <C-p>m2 :call php#easy#any#entities#method#append("protected")<CR>
+    nmap <C-p>m3 :call php#easy#any#entities#method#append("public")<CR>
 
     nmap <C-p>a :call php#easy#argument#append()<CR>
 

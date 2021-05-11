@@ -8,12 +8,12 @@ function! php#easy#any#orchestrator#itIs()
         call add(l:positions, l:method)
     endif
 
-    let l:constant = search(g:php#easy#any#constant#regex, 'nW')
+    let l:constant = search(g:php#easy#any#entities#constant#regex, 'nW')
     if l:constant != 0
         call add(l:positions, l:constant)
     endif
 
-    let l:property = search(g:php#easy#any#property#regex, 'nW')
+    let l:property = search(g:php#easy#any#entities#property#regex, 'nW')
     if l:property != 0
         call add(l:positions, l:property)
     endif
@@ -42,11 +42,11 @@ function! php#easy#any#orchestrator#copy()
     let l:itIs = php#easy#any#orchestrator#itIs()
 
     if l:itIs == 'method'
-        call php#easy#any#method#copy()
+        call php#easy#any#entities#method#copy()
     elseif  l:itIs == 'constant'
-        call php#easy#any#constant#copy()
+        call php#easy#any#entities#constant#copy()
     elseif  l:itIs == 'property'
-        call php#easy#any#property#copy()
+        call php#easy#any#entities#property#copy()
     endif
 endfunction
 
@@ -55,11 +55,11 @@ function! php#easy#any#orchestrator#replica()
     let l:itIs = php#easy#any#orchestrator#itIs()
 
     if l:itIs == 'method'
-        call php#easy#any#method#replica()
+        call php#easy#any#entities#method#replica()
     elseif  l:itIs == 'constant'
-        call php#easy#any#constant#replica()
+        call php#easy#any#entities#constant#replica()
     elseif  l:itIs == 'property'
-        call php#easy#any#property#replica()
+        call php#easy#any#entities#property#replica()
     endif
 endfunction
 
@@ -68,11 +68,11 @@ function! php#easy#any#orchestrator#delete()
     let l:itIs = php#easy#any#orchestrator#itIs()
 
     if l:itIs == 'method'
-        call php#easy#any#method#delete()
+        call php#easy#any#entities#method#delete()
     elseif  l:itIs == 'constant'
-        call php#easy#any#constant#delete()
+        call php#easy#any#entities#constant#delete()
     elseif  l:itIs == 'property'
-        call php#easy#any#property#delete()
+        call php#easy#any#entities#property#delete()
     endif
 endfunction
 
@@ -81,10 +81,10 @@ function! php#easy#any#orchestrator#doc()
     let l:itIs = php#easy#any#orchestrator#itIs()
 
     if l:itIs == 'method'
-        call php#easy#any#method#doc()
+        call php#easy#any#entities#method#doc()
     elseif  l:itIs == 'constant'
-        call php#easy#any#constant#doc()
+        call php#easy#any#entities#constant#doc()
     elseif  l:itIs == 'property'
-        call php#easy#any#property#doc()
+        call php#easy#any#entities#property#doc()
     endif
 endfunction
