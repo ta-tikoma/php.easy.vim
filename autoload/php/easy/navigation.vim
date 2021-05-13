@@ -11,21 +11,21 @@ function! php#easy#navigation#next()
 endfunction
 
 function! php#easy#navigation#methodPrev()
-    call search("^    \\(private\\|public\\|protected\\) function", 'bw')
+    call search(g:php#easy#any#regex#method, 'bw')
     normal! zz
 endfunction
 
 function! php#easy#navigation#methodNext()
-    call search("^    \\(private\\|public\\|protected\\) function", 'w')
+    call search(g:php#easy#any#regex#method, 'w')
     normal! zz
 endfunction
 
 function! php#easy#navigation#propertyPrev()
-    call search("^    \\(private\\|public\\|protected\\) \\$", 'bw')
+    call search(g:php#easy#any#regex#property, 'bw')
     normal! zz
 endfunction
 
 function! php#easy#navigation#propertyNext()
-    call search("^    \\(private\\|public\\|protected\\) \\$", 'w')
+    call search(g:php#easy#any#regex#property, 'w')
     normal! zz
 endfunction

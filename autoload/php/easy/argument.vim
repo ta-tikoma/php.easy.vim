@@ -8,7 +8,7 @@ function! php#easy#argument#append()
 
     call php#easy#helpers#insert#insert("php#easy#helpers#position#restore()")
 endfunction
-
+ 
 " insert argument
 function! php#easy#argument#insert()
     normal! l"pyi)^

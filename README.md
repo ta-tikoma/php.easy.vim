@@ -16,7 +16,7 @@ Plug 'ta-tikoma/php.easy.vim'
 let g:phpEasyUseDefaultKeyBinding = 0
 ```
 
-## If you need check stack fucntions of php#easy
+## If you need check stack functions of php#easy
 
 ```vim
 php#easy#helpers#insert#is()
@@ -60,9 +60,9 @@ php#easy#helpers#insert#is()
 
 ![init class](https://raw.githubusercontent.com/ta-tikoma/php.easy.vim/main/example/c-p-ic.gif)
 
-## Add private property `<C-p>p`
+## Add private property `<C-p>p1`
 
-![add private property](https://raw.githubusercontent.com/ta-tikoma/php.easy.vim/main/example/c-p-p.gif)
+![add private property](https://raw.githubusercontent.com/ta-tikoma/php.easy.vim/main/example/c-p-p1.gif)
 
 ## Add depended injection `<C-p>di`
 

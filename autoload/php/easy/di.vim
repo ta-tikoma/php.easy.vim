@@ -28,24 +28,23 @@ function! php#easy#di#end()
     " set properies value by arguments
     call search("{")
     for argument in l:arguments
-        let l:typeAndName = split(trim(argument))
-        let l:propertyExist = search("^    \\(private\\|public\\|protected\\) " . l:typeAndName[1], 'wn')
+        let l:name = split(trim(argument))[1][1:]
+        let l:propertyExist = search(g:php#easy#any#regex#property . l:name, 'wn')
         if l:propertyExist == 0
-            let l:name = typeAndName[1][1:]
             exec "normal! o$this->" . l:name . " = $" . l:name . ";"
         endif
     endfor
 
     " add properies
     normal! G
-    let l:lastProperty = search("^    \\(private\\|public\\|protected\\) \\$", 'b')
+    let l:lastProperty = search(g:php#easy#any#regex#property, 'b')
     if l:lastProperty == 0
         let l:beginOfClass = search("^{")
     else
         exec "normal! o"
     endif
     for argument in l:arguments
-        let l:propertyExist = search("^    \\(private\\|public\\|protected\\) " . argument, 'wn')
+        let l:propertyExist = search(g:php#easy#any#regex#visibility . argument, 'wn')
         if l:propertyExist == 0
             let @p = "\nprivate " . argument . ";"
             normal "pp
@@ -58,10 +57,10 @@ endfunction
 " append constructor
 function! php#easy#di#construct()
     normal gg
-    let l:firstMethod = search("^    \\(private\\|public\\|protected\\) function")
+    let l:firstMethod = search(g:php#easy#any#regex#method)
     if l:firstMethod == 0
         normal G
-        let l:lastProperty = search("^    \\(private\\|public\\|protected\\) \\$", "b")
+        let l:lastProperty = search(g:php#easy#any#regex#property, "b")
         exec "normal o\<CR>public function __construct()\<CR>{\<CR>}"
     else
         exec "normal O\<CR>public function __construct()\<CR>{\<CR>}\<CR>"
