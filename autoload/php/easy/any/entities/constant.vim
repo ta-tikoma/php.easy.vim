@@ -59,7 +59,8 @@ endfunction
 function! php#easy#any#entities#constant#doc()
     normal! k
     if match(getline("."), g:php#easy#any#regex#commentEnd) != -1
-        echom 'insert in to comment property'
+        normal! o
+        startinsert!
     else
         normal! jj
         let @p = "    /**\n     * \n     */\n"

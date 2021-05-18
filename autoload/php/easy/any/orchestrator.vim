@@ -1,19 +1,27 @@
 function! php#easy#any#orchestrator#itIs()
     normal! k
 
+    " if we on docblock go to end
+    if match(getline("."), g:php#easy#any#regex#commentMiddle) != -1
+        call search(g:php#easy#any#regex#commentEnd)
+    endif
+
     let l:positions = []
 
+    " search near method
     let l:method = search("^    }", 'nW')
     if l:method != 0
         call add(l:positions, l:method)
     endif
 
-    let l:constant = search(g:php#easy#any#entities#constant#regex, 'nW')
+    " search near constant
+    let l:constant = search(g:php#easy#any#regex#constant, 'nW')
     if l:constant != 0
         call add(l:positions, l:constant)
     endif
 
-    let l:property = search(g:php#easy#any#entities#property#regex, 'nW')
+    " search near property
+    let l:property = search(g:php#easy#any#regex#property, 'nW')
     if l:property != 0
         call add(l:positions, l:property)
     endif

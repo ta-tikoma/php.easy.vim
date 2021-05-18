@@ -64,7 +64,8 @@ function! php#easy#any#entities#method#doc()
     call search(g:php#easy#any#regex#method, "b")
     normal! k
     if match(getline("."), g:php#easy#any#regex#commentEnd) != -1
-        echom 'insert in to comment'
+        normal! o
+        startinsert!
     else
         normal! j
         let @p = "    /**\n     * \n     */\n"

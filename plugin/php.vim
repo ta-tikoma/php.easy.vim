@@ -46,6 +46,7 @@ if g:phpEasyUseDefaultKeyBinding
 
     " other
     nmap <C-p>l :call php#easy#other#log()<CR>
+
     nmap <C-p>v0 :call php#easy#other#changeVisibility('')<CR>
     nmap <C-p>v1 :call php#easy#other#changeVisibility('private')<CR>
     nmap <C-p>v2 :call php#easy#other#changeVisibility('protected')<CR>
