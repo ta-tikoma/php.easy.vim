@@ -34,10 +34,10 @@ function! php#easy#any#entities#method#replica()
     call php#easy#any#entities#method#copy()
 
     call search(g:php#easy#any#regex#methodEnd, "e")
-    exec "normal! o"
+    normal! o
     normal! pzz
     call search(g:php#easy#any#regex#method, "e")
-    exec "normal! wdw"
+    normal! wdw
     startinsert
 endfunction
 
@@ -78,6 +78,6 @@ endfunction
 function! php#easy#any#entities#method#rename()
     normal! j
     call search(g:php#easy#any#regex#method, "be")
-    exec "normal! wdw"
+    normal! wdw
     startinsert
 endfunction

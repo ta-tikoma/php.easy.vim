@@ -32,10 +32,10 @@ function! php#easy#any#entities#property#replica()
     call php#easy#any#entities#property#copy()
 
     call search(g:php#easy#any#regex#property, 'e')
-    exec "normal! o"
+    normal! o
     normal! pzz
     call search(g:php#easy#any#regex#property, 'e')
-    exec "normal! ldw"
+    normal! ldw
     startinsert
 endfunction
 

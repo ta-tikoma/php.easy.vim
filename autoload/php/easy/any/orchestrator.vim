@@ -9,7 +9,7 @@ function! php#easy#any#orchestrator#itIs()
     let l:positions = []
 
     " search near method
-    let l:method = search("^    }", 'nW')
+    let l:method = search(g:php#easy#any#regex#methodEnd, 'nW')
     if l:method != 0
         call add(l:positions, l:method)
     endif

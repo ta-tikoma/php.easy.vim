@@ -33,10 +33,10 @@ function! php#easy#any#entities#constant#replica()
     call php#easy#any#entities#constant#copy()
 
     call search(g:php#easy#any#regex#constant, 'e')
-    exec "normal! o"
+    normal! o
     normal! pzz
     call search(g:php#easy#any#regex#constant, 'e')
-    exec "normal! ldw"
+    normal! ldw
     startinsert
 endfunction
 
