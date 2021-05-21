@@ -1,17 +1,17 @@
 " append dependency injection
 function! php#easy#di#append()
-    call php#easy#position#remember()
+    call php#easy#helpers#position#remember()
 
     " find or create constructor
     let l:constructorBegin = search('public function __construct(', 'ew')
     if l:constructorBegin == 0
-        call php#easy#method#construct()
+        call php#easy#di#construct()
         call search('public function __construct(', 'ew')
     endif
 
     call php#easy#argument#insert()
 
-    call php#easy#insert#insert("php#easy#di#end()")
+    call php#easy#helpers#insert#insert("php#easy#di#end()")
 endfunction
 
 function! php#easy#di#end()
@@ -28,30 +28,40 @@ function! php#easy#di#end()
     " set properies value by arguments
     call search("{")
     for argument in l:arguments
-        let l:typeAndName = split(trim(argument))
-        let l:propertyExist = search("^    \\(private\\|public\\|protected\\) " . l:typeAndName[1], 'wn')
+        let l:name = split(trim(argument))[1][1:]
+        let l:propertyExist = search(g:php#easy#any#regex#property . l:name, 'wn')
         if l:propertyExist == 0
-            let l:name = typeAndName[1][1:]
             exec "normal! o$this->" . l:name . " = $" . l:name . ";"
         endif
     endfor
 
     " add properies
     normal! G
-    let l:lastProperty = search("^    \\(private\\|public\\|protected\\) \\$", 'b')
+    let l:lastProperty = search(g:php#easy#any#regex#property, 'b')
     if l:lastProperty == 0
         let l:beginOfClass = search("^{")
     else
         exec "normal! o"
     endif
+
     for argument in l:arguments
-        let l:typeAndName = split(trim(argument))
-        let l:propertyExist = search("^    \\(private\\|public\\|protected\\) " . l:typeAndName[1], 'wn')
+        let l:argument = trim(argument)
+        let l:propertyExist = search(g:php#easy#any#regex#visibility . l:argument, 'wn')
         if l:propertyExist == 0
-            let @p = "\n    /**\n     * @var " . l:typeAndName[0] . "\n     */\nprivate " . l:typeAndName[1] . ";"
+            let @p = "\nprivate " . l:argument . ";"
             normal "pp
         endif
     endfor
 
-    call php#easy#position#restore()
+    call php#easy#helpers#position#restore()
+endfunction
+
+" append constructor
+function! php#easy#di#construct()
+    normal! gg
+    let l:firstMethod = search(g:php#easy#any#regex#method)
+    if l:firstMethod == 0
+        normal G
+    endif
+    exec "normal! O\<CR>public function __construct()\<CR>{\<CR>}\<CR>"
 endfunction

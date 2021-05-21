@@ -1,14 +1,14 @@
 " append argument
 function! php#easy#argument#append()
-    call php#easy#position#remember()
+    call php#easy#helpers#position#remember()
 
     normal! j
     call search("function \\w\\+(", "bew")
     call php#easy#argument#insert()
 
-    call php#easy#insert#insert("php#easy#position#restore()")
+    call php#easy#helpers#insert#insert("php#easy#helpers#position#restore()")
 endfunction
-
+ 
 " insert argument
 function! php#easy#argument#insert()
     normal! l"pyi)^
@@ -30,7 +30,7 @@ endfunction
 
 " delete argument
 function! php#easy#argument#delete(number)
-    call php#easy#position#remember()
+    call php#easy#helpers#position#remember()
 
     call search("function \\w\\+(", "bew")
     normal! l"pdi)^
@@ -52,5 +52,5 @@ function! php#easy#argument#delete(number)
         normal! "pp
     endif
 
-    call php#easy#position#restore()
+    call php#easy#helpers#position#restore()
 endfunction

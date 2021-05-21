@@ -6,23 +6,34 @@ let g:phpEasyUseDefaultKeyBinding = get(g:, 'phpEasyUseDefaultKeyBinding', 1)
 
 if g:phpEasyUseDefaultKeyBinding
     " any
-    nmap <C-p>y :call php#easy#any#copy()<CR>
-    nmap <C-p>r :call php#easy#any#replica()<CR>
-    nmap <C-p>d :call php#easy#any#delete()<CR>
+    nmap <C-p>y :call php#easy#any#orchestrator#copy()<CR>
+    nmap <C-p>r :call php#easy#any#orchestrator#replica()<CR>
+    nmap <C-p>d :call php#easy#any#orchestrator#delete()<CR>
+    nmap <C-p>8 :call php#easy#any#orchestrator#doc()<CR>
 
-    " constant
-    nmap <C-p>c :call php#easy#constant#append()<CR>
+    " append
+    nmap <C-p>c0 :call php#easy#any#entities#constant#append("")<CR>
+    nmap <C-p>c1 :call php#easy#any#entities#constant#append("private")<CR>
+    nmap <C-p>c2 :call php#easy#any#entities#constant#append("protected")<CR>
+    nmap <C-p>c3 :call php#easy#any#entities#constant#append("public")<CR>
+
+    nmap <C-p>p0 :call php#easy#any#entities#property#append("")<CR>
+    nmap <C-p>p1 :call php#easy#any#entities#property#append("private")<CR>
+    nmap <C-p>p2 :call php#easy#any#entities#property#append("protected")<CR>
+    nmap <C-p>p3 :call php#easy#any#entities#property#append("public")<CR>
+
+    nmap <C-p>m0 :call php#easy#any#entities#method#append("")<CR>
+    nmap <C-p>m1 :call php#easy#any#entities#method#append("private")<CR>
+    nmap <C-p>m2 :call php#easy#any#entities#method#append("protected")<CR>
+    nmap <C-p>m3 :call php#easy#any#entities#method#append("public")<CR>
+
+    nmap <C-p>a :call php#easy#argument#append()<CR>
 
     " argument
-    nmap <C-p>a :call php#easy#argument#append()<CR>
     nmap <C-p>da1 :call php#easy#argument#delete(1)<CR>
     nmap <C-p>da2 :call php#easy#argument#delete(2)<CR>
     nmap <C-p>da3 :call php#easy#argument#delete(3)<CR>
     nmap <C-p>da4 :call php#easy#argument#delete(4)<CR>
-
-    " property
-    nmap <C-p>p :call php#easy#property#append("private")<CR>
-    nmap <C-p>P :call php#easy#property#append("public")<CR>
 
     " di
     nmap <C-p>di :call php#easy#di#append()<CR>
@@ -35,17 +46,20 @@ if g:phpEasyUseDefaultKeyBinding
 
     " other
     nmap <C-p>l :call php#easy#other#log()<CR>
-    nmap <C-p>v :call php#easy#other#changeVisibility()<CR>
-    nmap <C-p><C-p> :call php#easy#other#doc()<CR>
+
+    nmap <C-p>v0 :call php#easy#other#changeVisibility('')<CR>
+    nmap <C-p>v1 :call php#easy#other#changeVisibility('private')<CR>
+    nmap <C-p>v2 :call php#easy#other#changeVisibility('protected')<CR>
+    nmap <C-p>v3 :call php#easy#other#changeVisibility('public')<CR>
 
     " navigation
-    nmap = :call php#easy#navigation#methodNext()<CR>
-    nmap - :call php#easy#navigation#methodPrev()<CR>
-    nmap _ :call php#easy#navigation#propertyNext()<CR>
-    nmap + :call php#easy#navigation#propertyPrev()<CR>
+    " nmap = :call php#easy#navigation#methodNext()<CR>
+    " nmap - :call php#easy#navigation#methodPrev()<CR>
+    " nmap _ :call php#easy#navigation#propertyNext()<CR>
+    " nmap + :call php#easy#navigation#propertyPrev()<CR>
 endif
 
 augroup php_easy_insert_end
     autocmd!
-    autocmd InsertLeave *.php call php#easy#insert#end()
+    autocmd InsertLeave *.php call php#easy#helpers#insert#end()
 augroup END
