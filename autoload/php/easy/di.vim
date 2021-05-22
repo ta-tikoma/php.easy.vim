@@ -48,8 +48,7 @@ function! php#easy#di#end()
         let l:argument = trim(argument)
         let l:propertyExist = search(g:php#easy#any#regex#visibility . l:argument, 'wn')
         if l:propertyExist == 0
-            let @p = "\nprivate " . l:argument . ";"
-            normal "pp
+            exec "normal! oprivate " . l:argument . ";"
         endif
     endfor
 

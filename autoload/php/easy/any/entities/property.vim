@@ -1,12 +1,14 @@
 " append property
-function! php#easy#any#entities#property#append(visibility)
+function! php#easy#any#entities#property#append()
+    let l:visibility = php#easy#helpers#visibility#choose()
+
     normal G
     let l:lastProperty = search(g:php#easy#any#regex#property, 'b')
     if l:lastProperty == 0
-        call search("^{")
-        exec "normal! o" . a:visibility . " ;"
+        call search('^{')
+        exec "normal! o" . l:visibility . ";"
     else
-        exec "normal! o\<CR>" . a:visibility . " ;"
+        exec "normal! o\<CR>" . l:visibility . ";"
     endif
 
     startinsert
