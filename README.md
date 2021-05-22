@@ -49,6 +49,8 @@ php#easy#helpers#insert#is()
 | `<C-p>l`            | `php#easy#other#log()`                    | Append on new line print structure for debug |
 | `<C-p>v{0-3}`       | `php#easy#other#changeVisibility()`       | Change **v**isibiliti property or function on current line |
 | **Navigation**      |||
+| `<tab>`             | `php#easy#navigation#next()`              | Jump to next constant, property, start or end method |
+| `<S-tab>`           | `php#easy#navigation#prev()`              | Jump to prev constant, property, start or end method |
 |                     | `php#easy#navigation#methodNext()`        | Jump to next method |
 |                     | `php#easy#navigation#methodPrev()`        | Jump to prev method |
 |                     | `php#easy#navigation#propertyNext()`      | Jump to next property |
