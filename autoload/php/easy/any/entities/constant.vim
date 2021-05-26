@@ -1,5 +1,7 @@
 " append constant
-function! php#easy#any#entities#constant#append(visibility)
+function! php#easy#any#entities#constant#append()
+    let l:visibility = php#easy#helpers#visibility#choose()
+
     normal G
     let l:lastConstant = search(g:php#easy#any#regex#constant, 'b')
     if l:lastConstant == 0
@@ -8,7 +10,7 @@ function! php#easy#any#entities#constant#append(visibility)
         normal! o
     endif
 
-    exec "normal! o" . a:visibility . " const ;"
+    exec "normal! o" . l:visibility . "const ;"
 
     startinsert
 endfunction

@@ -1,12 +1,14 @@
 " append method
-function! php#easy#any#entities#method#append(visibility)
+function! php#easy#any#entities#method#append()
+    let l:visibility = php#easy#helpers#visibility#choose()
+
     normal G
     let l:lastMethod = search(g:php#easy#any#regex#methodEnd, 'b')
     if l:lastMethod == 0
         call search('^}')
-        exec "normal! O" . a:visibility . " function "
+        exec "normal! O" . l:visibility . "function "
     else
-        exec "normal! o\<CR>" . a:visibility . " function "
+        exec "normal! o\<CR>" . l:visibility . "function "
     endif
 
     startinsert!
