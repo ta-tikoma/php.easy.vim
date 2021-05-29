@@ -32,6 +32,12 @@ function! php#easy#any#orchestrator#itIs()
         call add(l:positions, l:variable)
     endif
 
+    " search near object
+    let l:object = search(g:php#easy#any#regex#object, 'nW')
+    if l:object != 0
+        call add(l:positions, l:object)
+    endif
+
     if len(l:positions) == 0
         return ''
     endif
@@ -40,6 +46,10 @@ function! php#easy#any#orchestrator#itIs()
 
     if l:minPosition == l:variable
         return 'variable'
+    endif
+
+    if l:minPosition == l:object
+        return 'object'
     endif
 
     if l:minPosition == l:method
@@ -106,5 +116,7 @@ function! php#easy#any#orchestrator#doc()
         call php#easy#any#entities#property#doc()
     elseif  l:itIs == 'variable'
         call php#easy#any#entities#variable#doc()
+    elseif  l:itIs == 'object'
+        call php#easy#any#entities#object#doc()
     endif
 endfunction

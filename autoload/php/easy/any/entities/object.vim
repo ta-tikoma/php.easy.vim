@@ -1,20 +1,27 @@
+" doc variable
+function! php#easy#any#entities#object#doc()
+    let @p = "/**\n * \n */\n"
+    normal j"pPj
+    startinsert!
+endfunction
+
 " init class
-function! php#easy#object#class()
+function! php#easy#any#entities#object#class()
     call s:PhpObject("final class")
 endfunction
 
 " init abstract class
-function! php#easy#object#abstractClass()
+function! php#easy#any#entities#object#abstractClass()
     call s:PhpObject("abstract class")
 endfunction
 
 " init interface
-function! php#easy#object#interface()
+function! php#easy#any#entities#object#interface()
     call s:PhpObject("interface")
 endfunction
 
 " init trait
-function! php#easy#object#trait()
+function! php#easy#any#entities#object#trait()
     call s:PhpObject("trait")
 endfunction
 
@@ -59,7 +66,7 @@ function! s:PhpObject(type)
         let className = search(a:type . " " . file, "e")
     else
         exec "normal! Cnamespace " . path . ";"
-        let l:objectBegin = search("^\\(final class\\|abstract class\\|class\\|interface\\|trait\\) ", "we")
+        let l:objectBegin = search(g:php#easy#any#regex#object, "we")
         exec "normal! lcw" . file
     endif
 endfunction

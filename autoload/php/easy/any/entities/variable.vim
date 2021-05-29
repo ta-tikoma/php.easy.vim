@@ -1,3 +1,4 @@
+" doc variable
 function! php#easy#any#entities#variable#doc()
     normal! j
     let l:line = getline(".")
