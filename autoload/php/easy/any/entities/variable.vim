@@ -1,0 +1,19 @@
+function! php#easy#any#entities#variable#doc()
+    normal! j
+    let l:line = getline(".")
+    let l:variable = matchstr(l:line, '\(\$\w\+\)')
+    let l:matches = matchlist(l:line, '\(\w\+\)::class')
+
+    if len(l:matches) > 1
+        let l:type = l:matches[1]
+    else
+        let l:type = ''
+    endif
+
+    exec 'normal! O/** @var ' . l:type . ' ' . l:variable . ' */'
+
+    if len(l:matches) < 1
+        normal! 3ge2l
+        startinsert
+    endif
+endfunction
