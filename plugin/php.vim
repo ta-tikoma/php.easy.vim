@@ -12,21 +12,9 @@ if g:phpEasyUseDefaultKeyBinding
     nmap <C-p>8 :call php#easy#any#orchestrator#doc()<CR>
 
     " append
-    nmap <C-p>c0 :call php#easy#any#entities#constant#append("")<CR>
-    nmap <C-p>c1 :call php#easy#any#entities#constant#append("private")<CR>
-    nmap <C-p>c2 :call php#easy#any#entities#constant#append("protected")<CR>
-    nmap <C-p>c3 :call php#easy#any#entities#constant#append("public")<CR>
-
+    nmap <C-p>c :call php#easy#any#entities#constant#append()<CR>
     nmap <C-p>p :call php#easy#any#entities#property#append()<CR>
-    " nmap <C-p>p0 :call php#easy#any#entities#property#append("")<CR>
-    " nmap <C-p>p1 :call php#easy#any#entities#property#append("private")<CR>
-    " nmap <C-p>p2 :call php#easy#any#entities#property#append("protected")<CR>
-    " nmap <C-p>p3 :call php#easy#any#entities#property#append("public")<CR>
-
-    nmap <C-p>m0 :call php#easy#any#entities#method#append("")<CR>
-    nmap <C-p>m1 :call php#easy#any#entities#method#append("private")<CR>
-    nmap <C-p>m2 :call php#easy#any#entities#method#append("protected")<CR>
-    nmap <C-p>m3 :call php#easy#any#entities#method#append("public")<CR>
+    nmap <C-p>m :call php#easy#any#entities#method#append()<CR>
 
     nmap <C-p>a :call php#easy#argument#append()<CR>
 
@@ -47,19 +35,11 @@ if g:phpEasyUseDefaultKeyBinding
 
     " other
     nmap <C-p>l :call php#easy#other#log()<CR>
-
-    nmap <C-p>v0 :call php#easy#other#changeVisibility('')<CR>
-    nmap <C-p>v1 :call php#easy#other#changeVisibility('private')<CR>
-    nmap <C-p>v2 :call php#easy#other#changeVisibility('protected')<CR>
-    nmap <C-p>v3 :call php#easy#other#changeVisibility('public')<CR>
+    nmap <C-p>v :call php#easy#other#changeVisibility()<CR>
 
     " navigation
     nmap <tab> :call php#easy#navigation#next()<CR>
     nmap <S-tab> :call php#easy#navigation#prev()<CR>
-    " nmap = :call php#easy#navigation#methodNext()<CR>
-    " nmap - :call php#easy#navigation#methodPrev()<CR>
-    " nmap _ :call php#easy#navigation#propertyNext()<CR>
-    " nmap + :call php#easy#navigation#propertyPrev()<CR>
 endif
 
 augroup php_easy_insert_end

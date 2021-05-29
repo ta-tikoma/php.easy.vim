@@ -6,8 +6,10 @@ function! php#easy#other#log()
 endfunction
 
 " change private of function or property
-function! php#easy#other#changeVisibility(visibility)
-    silent exec ':s/\(private\|protected\|public\)/' . a:visibility . '/g'
+function! php#easy#other#changeVisibility()
+    let l:visibility = php#easy#helpers#visibility#choose()
+
+    silent exec ':s/\(private\|protected\|public\)/' . l:visibility . '/g'
 endfunction
 
 " append space
