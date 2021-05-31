@@ -19,10 +19,7 @@ if g:phpEasyUseDefaultKeyBinding
     nmap <C-p>a :call php#easy#argument#append()<CR>
 
     " argument
-    nmap <C-p>da1 :call php#easy#argument#delete(1)<CR>
-    nmap <C-p>da2 :call php#easy#argument#delete(2)<CR>
-    nmap <C-p>da3 :call php#easy#argument#delete(3)<CR>
-    nmap <C-p>da4 :call php#easy#argument#delete(4)<CR>
+    nmap <C-p>da :call php#easy#argument#delete()<CR>
 
     " di
     nmap <C-p>di :call php#easy#di#append()<CR>

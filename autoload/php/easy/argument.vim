@@ -29,8 +29,11 @@ function! php#easy#argument#insert()
 endfunction
 
 " delete argument
-function! php#easy#argument#delete(number)
+function! php#easy#argument#delete()
     call php#easy#helpers#position#remember()
+
+    echon 'number of argument:'
+    let l:number = nr2char(getchar())
 
     call search("function \\w\\+(", "bew")
     normal! l"pdi)^
@@ -41,12 +44,12 @@ function! php#easy#argument#delete(number)
     " if has not lines
     if match(l:argumentLine, "\n") == -1
         let l:arguments = split(l:argumentLine, ', ')
-        call remove(l:arguments, a:number - 1)
+        call remove(l:arguments, l:number - 1)
         let @p = join(l:arguments, ', ')
         normal! h"pp
     else
         let l:arguments = split(l:argumentLine, ",\n")
-        call remove(l:arguments, a:number - 1)
+        call remove(l:arguments, l:number - 1)
         let @p = join(l:arguments, ",\n")
         call search("(", "be")
         normal! "pp
