@@ -28,10 +28,10 @@ if g:phpEasyUseDefaultKeyBinding
     nmap <C-p>di :call php#easy#di#append()<CR>
 
     " init object
-    nmap <C-p>ic :call php#easy#object#class()<CR>
-    nmap <C-p>iac :call php#easy#object#abstractClass()<CR>
-    nmap <C-p>ii :call php#easy#object#interface()<CR>
-    nmap <C-p>it :call php#easy#object#trait()<CR>
+    nmap <C-p>ic :call php#easy#any#entities#object#class()<CR>
+    nmap <C-p>iac :call php#easy#any#entities#object#abstractClass()<CR>
+    nmap <C-p>ii :call php#easy#any#entities#object#interface()<CR>
+    nmap <C-p>it :call php#easy#any#entities#object#trait()<CR>
 
     " other
     nmap <C-p>l :call php#easy#other#log()<CR>
