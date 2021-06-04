@@ -9,7 +9,7 @@ function! php#easy#any#orchestrator#itIs()
     let l:positions = []
 
     " search near method
-    let l:method = search(g:php#easy#any#regex#methodEnd, 'nW')
+    let l:method = search(g:php#easy#any#regex#method, 'nW')
     if l:method != 0
         call add(l:positions, l:method)
     endif
@@ -44,10 +44,6 @@ function! php#easy#any#orchestrator#itIs()
     
     let l:minPosition = min(l:positions)
 
-    if l:minPosition == l:variable
-        return 'variable'
-    endif
-
     if l:minPosition == l:object
         return 'object'
     endif
@@ -62,6 +58,10 @@ function! php#easy#any#orchestrator#itIs()
 
     if l:minPosition == l:property
         return 'property'
+    endif
+
+    if l:minPosition == l:variable
+        return 'variable'
     endif
 endfunction
 
