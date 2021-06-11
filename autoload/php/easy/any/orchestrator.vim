@@ -1,124 +1,60 @@
-function! php#easy#any#orchestrator#itIs()
+function! php#easy#any#orchestrator#itIs(patterns)
     normal! k
+
+    let l:patterns = {'method': g:php#easy#any#regex#methodEnd, 'constant': g:php#easy#any#regex#constant, 'property': g:php#easy#any#regex#property, 'variable': g:php#easy#any#regex#variable, 'object': g:php#easy#any#regex#object}
 
     " if we on docblock go to end
     if match(getline("."), g:php#easy#any#regex#commentMiddle) != -1
         call search(g:php#easy#any#regex#commentEnd)
     endif
 
-    let l:positions = []
-
-    " search near method
-    let l:method = search(g:php#easy#any#regex#methodEnd, 'nW')
-    if l:method != 0
-        call add(l:positions, l:method)
-    endif
-
-    " search near constant
-    let l:constant = search(g:php#easy#any#regex#constant, 'nW')
-    if l:constant != 0
-        call add(l:positions, l:constant)
-    endif
-
-    " search near property
-    let l:property = search(g:php#easy#any#regex#property, 'nW')
-    if l:property != 0
-        call add(l:positions, l:property)
-    endif
-
-    " search near variable
-    let l:variable = search(g:php#easy#any#regex#variable, 'nW')
-    if l:variable != 0
-        if line('.') == l:variable
-            return 'variable'
+    " only from argument
+    for [key, value] in items(l:patterns)
+        if index(a:patterns, key) == -1
+            call remove(l:patterns, key)
         endif
-    endif
+    endfor
 
-    " search near object
-    let l:object = search(g:php#easy#any#regex#object, 'nW')
-    if l:object != 0
-        call add(l:positions, l:object)
-    endif
+    let l:positions = {}
 
-    if len(l:positions) == 0
-        return ''
-    endif
-    
-    let l:minPosition = min(l:positions)
+    " find positions
+    for [key, value] in items(l:patterns)
+        let l:position = search(value, 'nW')
+        if l:position != 0
+            let l:positions[key] = l:position
+        endif
+    endfor
 
-    if l:minPosition == l:object
-        return 'object'
-    endif
+    let l:minPosition = min(values(l:positions))
 
-    if l:minPosition == l:method
-        return 'method'
-    endif
-
-    if l:minPosition == l:constant
-        return 'constant'
-    endif
-
-    if l:minPosition == l:property
-        return 'property'
-    endif
+    " who has min position
+    for [key, value] in items(l:positions)
+        if l:minPosition == value
+            return key
+        endif
+    endfor
 endfunction
 
 " copy
 function! php#easy#any#orchestrator#copy()
-    let l:itIs = php#easy#any#orchestrator#itIs()
-
-    " echom l:itIs
-
-    if l:itIs == 'method'
-        call php#easy#any#entities#method#copy()
-    elseif  l:itIs == 'constant'
-        call php#easy#any#entities#constant#copy()
-    elseif  l:itIs == 'property'
-        call php#easy#any#entities#property#copy()
-    endif
+    let l:itIs = php#easy#any#orchestrator#itIs(['method', 'constant', 'property'])
+    exec 'call php#easy#any#entities#' . l:itIs . '#copy()'
 endfunction
 
 " replica
 function! php#easy#any#orchestrator#replica()
-    let l:itIs = php#easy#any#orchestrator#itIs()
-
-    " echom l:itIs
-
-    if l:itIs == 'method'
-        call php#easy#any#entities#method#replica()
-    elseif  l:itIs == 'constant'
-        call php#easy#any#entities#constant#replica()
-    elseif  l:itIs == 'property'
-        call php#easy#any#entities#property#replica()
-    endif
+    let l:itIs = php#easy#any#orchestrator#itIs(['method', 'constant', 'property'])
+    exec 'call php#easy#any#entities#' . l:itIs . '#replica()'
 endfunction
 
 " delete
 function! php#easy#any#orchestrator#delete()
-    let l:itIs = php#easy#any#orchestrator#itIs()
-
-    if l:itIs == 'method'
-        call php#easy#any#entities#method#delete()
-    elseif  l:itIs == 'constant'
-        call php#easy#any#entities#constant#delete()
-    elseif  l:itIs == 'property'
-        call php#easy#any#entities#property#delete()
-    endif
+    let l:itIs = php#easy#any#orchestrator#itIs(['method', 'constant', 'property'])
+    exec 'call php#easy#any#entities#' . l:itIs . '#delete()'
 endfunction
 
 " phpdoc
 function! php#easy#any#orchestrator#doc()
-    let l:itIs = php#easy#any#orchestrator#itIs()
-
-    if l:itIs == 'method'
-        call php#easy#any#entities#method#doc()
-    elseif  l:itIs == 'constant'
-        call php#easy#any#entities#constant#doc()
-    elseif  l:itIs == 'property'
-        call php#easy#any#entities#property#doc()
-    elseif  l:itIs == 'variable'
-        call php#easy#any#entities#variable#doc()
-    elseif  l:itIs == 'object'
-        call php#easy#any#entities#object#doc()
-    endif
+    let l:itIs = php#easy#any#orchestrator#itIs(['method', 'constant', 'property', 'variable', 'object'])
+    exec 'call php#easy#any#entities#' . l:itIs . '#doc()'
 endfunction
