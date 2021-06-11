@@ -9,7 +9,7 @@ function! php#easy#any#orchestrator#itIs()
     let l:positions = []
 
     " search near method
-    let l:method = search(g:php#easy#any#regex#method, 'nW')
+    let l:method = search(g:php#easy#any#regex#methodEnd, 'nW')
     if l:method != 0
         call add(l:positions, l:method)
     endif
@@ -29,7 +29,9 @@ function! php#easy#any#orchestrator#itIs()
     " search near variable
     let l:variable = search(g:php#easy#any#regex#variable, 'nW')
     if l:variable != 0
-        call add(l:positions, l:variable)
+        if line('.') == l:variable
+            return 'variable'
+        endif
     endif
 
     " search near object
@@ -59,15 +61,13 @@ function! php#easy#any#orchestrator#itIs()
     if l:minPosition == l:property
         return 'property'
     endif
-
-    if l:minPosition == l:variable
-        return 'variable'
-    endif
 endfunction
 
 " copy
 function! php#easy#any#orchestrator#copy()
     let l:itIs = php#easy#any#orchestrator#itIs()
+
+    " echom l:itIs
 
     if l:itIs == 'method'
         call php#easy#any#entities#method#copy()
@@ -81,6 +81,8 @@ endfunction
 " replica
 function! php#easy#any#orchestrator#replica()
     let l:itIs = php#easy#any#orchestrator#itIs()
+
+    " echom l:itIs
 
     if l:itIs == 'method'
         call php#easy#any#entities#method#replica()
