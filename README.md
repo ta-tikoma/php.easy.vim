@@ -54,22 +54,33 @@ php#easy#helpers#insert#is()
 
 # Examples
 
-## Init class `<C-p>ic`
+## Init
 
-![init class](https://raw.githubusercontent.com/ta-tikoma/php.easy.vim/main/example/c-p-ic.gif)
+### Init trait `<C-p>it`
+![init trait](https://raw.githubusercontent.com/ta-tikoma/php.easy.vim/main/example/init/trait.gif)
 
-## Add private property `<C-p>p1`
+### Init interface `<C-p>ii`
+![init interface](https://raw.githubusercontent.com/ta-tikoma/php.easy.vim/main/example/init/interface.gif)
 
-![add private property](https://raw.githubusercontent.com/ta-tikoma/php.easy.vim/main/example/c-p-p1.gif)
+### Init abstract class `<C-p>iac`
+![init abstract class](https://raw.githubusercontent.com/ta-tikoma/php.easy.vim/main/example/init/abstract-class.gif)
 
-## Add depended injection `<C-p>di`
+### Init class `<C-p>ic`
+![init class](https://raw.githubusercontent.com/ta-tikoma/php.easy.vim/main/example/init/class.gif)
 
-![add depended injection ](https://raw.githubusercontent.com/ta-tikoma/php.easy.vim/main/example/c-p-di.gif)
+## Init class `<C-p>8`
 
-## Replicate function `<C-p>r`
+### Class
+![doc class](https://raw.githubusercontent.com/ta-tikoma/php.easy.vim/main/example/class.gif)
 
-![replicate function](https://raw.githubusercontent.com/ta-tikoma/php.easy.vim/main/example/c-p-r.gif)
+### Constant
+![doc constant](https://raw.githubusercontent.com/ta-tikoma/php.easy.vim/main/example/constant.gif)
 
-## Delete function `<C-p>d`
+### Property
+![doc property](https://raw.githubusercontent.com/ta-tikoma/php.easy.vim/main/example/property.gif)
 
-![delete function](https://raw.githubusercontent.com/ta-tikoma/php.easy.vim/main/example/c-p-d.gif)
+### Method
+![doc method](https://raw.githubusercontent.com/ta-tikoma/php.easy.vim/main/example/method.gif)
+
+### Variable
+![doc variable](https://raw.githubusercontent.com/ta-tikoma/php.easy.vim/main/example/variable.gif)
