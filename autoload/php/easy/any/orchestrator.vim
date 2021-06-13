@@ -1,7 +1,7 @@
 function! php#easy#any#orchestrator#itIs(patterns)
     normal! k
 
-    let l:patterns = {'method': g:php#easy#any#regex#methodEnd, 'constant': g:php#easy#any#regex#constant, 'property': g:php#easy#any#regex#property, 'variable': g:php#easy#any#regex#variable, 'object': g:php#easy#any#regex#object}
+    let l:patterns = {'method': g:php#easy#any#regex#method, 'constant': g:php#easy#any#regex#constant, 'property': g:php#easy#any#regex#property, 'variable': g:php#easy#any#regex#variable, 'object': g:php#easy#any#regex#object}
 
     " if we on docblock go to end
     if match(getline("."), g:php#easy#any#regex#commentMiddle) != -1
@@ -24,6 +24,8 @@ function! php#easy#any#orchestrator#itIs(patterns)
             let l:positions[key] = l:position
         endif
     endfor
+
+    " echo l:positions
 
     let l:minPosition = min(values(l:positions))
 
