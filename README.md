@@ -71,16 +71,16 @@ php#easy#helpers#insert#is()
 ## Init class `<C-p>8`
 
 ### Class
-![doc class](https://raw.githubusercontent.com/ta-tikoma/php.easy.vim/main/example/class.gif)
+![doc class](https://raw.githubusercontent.com/ta-tikoma/php.easy.vim/main/example/doc/class.gif)
 
 ### Constant
-![doc constant](https://raw.githubusercontent.com/ta-tikoma/php.easy.vim/main/example/constant.gif)
+![doc constant](https://raw.githubusercontent.com/ta-tikoma/php.easy.vim/main/example/doc/constant.gif)
 
 ### Property
-![doc property](https://raw.githubusercontent.com/ta-tikoma/php.easy.vim/main/example/property.gif)
+![doc property](https://raw.githubusercontent.com/ta-tikoma/php.easy.vim/main/example/doc/property.gif)
 
 ### Method
-![doc method](https://raw.githubusercontent.com/ta-tikoma/php.easy.vim/main/example/method.gif)
+![doc method](https://raw.githubusercontent.com/ta-tikoma/php.easy.vim/main/example/doc/method.gif)
 
 ### Variable
-![doc variable](https://raw.githubusercontent.com/ta-tikoma/php.easy.vim/main/example/variable.gif)
+![doc variable](https://raw.githubusercontent.com/ta-tikoma/php.easy.vim/main/example/doc/variable.gif)
