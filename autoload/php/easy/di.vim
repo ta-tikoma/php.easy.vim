@@ -61,6 +61,13 @@ function! php#easy#di#construct()
     let l:firstMethod = search(g:php#easy#any#regex#method)
     if l:firstMethod == 0
         normal G
+    else
+        normal! k
+        if match(getline("."), g:php#easy#any#regex#commentEnd) != -1
+            call search(g:php#easy#any#regex#comment, "b")
+        else
+            normal! j
+        endif
     endif
     exec "normal! O\<CR>public function __construct()\<CR>{\<CR>}\<CR>"
 endfunction
