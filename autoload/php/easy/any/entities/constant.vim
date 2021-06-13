@@ -15,10 +15,9 @@ function! php#easy#any#entities#constant#append()
     startinsert
 endfunction
 
-" copy constant
-function! php#easy#any#entities#constant#copy()
+function! s:SelectConstant()
     " docs
-    normal! k
+    normal! 0
     if match(getline("."), g:php#easy#any#regex#commentEnd) != -1
         call search(g:php#easy#any#regex#comment, "b")
     else
@@ -27,6 +26,11 @@ function! php#easy#any#entities#constant#copy()
 
     normal! V
     call search(g:php#easy#any#regex#constant, 'e')
+endfunction
+
+" copy constant
+function! php#easy#any#entities#constant#copy()
+    call s:SelectConstant()
     normal! y
 endfunction
 
@@ -44,29 +48,11 @@ endfunction
 
 " delete constant
 function! php#easy#any#entities#constant#delete()
-    " docs
-    normal! k
-    if match(getline("."), g:php#easy#any#regex#commentEnd) != -1
-        call search(g:php#easy#any#regex#comment, "b")
-    else
-        normal! j
-    endif
-
-    normal! V
-    call search(g:php#easy#any#regex#constant, 'e')
+    call s:SelectConstant()
     normal! d
 endfunction
 
 " doc const
 function! php#easy#any#entities#constant#doc()
-    normal! k
-    if match(getline("."), g:php#easy#any#regex#commentEnd) != -1
-        normal! o
-        startinsert!
-    else
-        normal! jj
-        let @p = "    /**\n     * \n     */\n"
-        normal "pPj
-        startinsert!
-    endif
+    call php#easy#any#entities#property#doc()
 endfunction

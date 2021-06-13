@@ -1,13 +1,11 @@
 " go to prev end or begin function and class properties
 function! php#easy#navigation#prev()
     call search(g:php#easy#any#regex#any, 'bw')
-    normal! zz
 endfunction
 
 " got to next end or begin function and class properties
 function! php#easy#navigation#next()
     call search(g:php#easy#any#regex#any, 'w')
-    normal! zz
 endfunction
 
 function! php#easy#navigation#methodPrev()

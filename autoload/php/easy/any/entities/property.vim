@@ -14,10 +14,9 @@ function! php#easy#any#entities#property#append()
     startinsert
 endfunction
 
-" copy property
-function! php#easy#any#entities#property#copy()
+function! s:SelectProperty()
     " docs
-    normal! k
+    normal! 0
     if match(getline("."), g:php#easy#any#regex#commentEnd) != -1
         call search(g:php#easy#any#regex#comment, "b")
     else
@@ -26,6 +25,11 @@ function! php#easy#any#entities#property#copy()
 
     normal! V
     call search(g:php#easy#any#regex#property, 'e')
+endfunction
+
+" copy property
+function! php#easy#any#entities#property#copy()
+    call s:SelectProperty()
     normal! y
 endfunction
 
@@ -43,16 +47,7 @@ endfunction
 
 " delete property
 function! php#easy#any#entities#property#delete()
-    " docs
-    normal! k
-    if match(getline("."), g:php#easy#any#regex#commentEnd) != -1
-        call search(g:php#easy#any#regex#comment, "b")
-    else
-        normal! j
-    endif
-
-    normal! V
-    call search(g:php#easy#any#regex#property, 'e')
+    call s:SelectProperty()
     normal! d
 endfunction
 
