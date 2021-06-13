@@ -68,7 +68,7 @@ php#easy#helpers#insert#is()
 ### Init class `<C-p>ic`
 ![init class](https://raw.githubusercontent.com/ta-tikoma/php.easy.vim/main/example/init/class.gif)
 
-## Init class `<C-p>8`
+## Add doc block `<C-p>8`
 
 ### Class
 ![doc class](https://raw.githubusercontent.com/ta-tikoma/php.easy.vim/main/example/doc/class.gif)
