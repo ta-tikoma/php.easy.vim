@@ -57,30 +57,30 @@ php#easy#helpers#insert#is()
 ## Init
 
 ### Init trait `<C-p>it`
-![init trait](https://raw.githubusercontent.com/ta-tikoma/php.easy.vim/main/example/init/trait.gif)
+![init trait](https://raw.githubusercontent.com/ta-tikoma/php.easy.vim/with-examples/example/init/trait.gif)
 
 ### Init interface `<C-p>ii`
-![init interface](https://raw.githubusercontent.com/ta-tikoma/php.easy.vim/main/example/init/interface.gif)
+![init interface](https://raw.githubusercontent.com/ta-tikoma/php.easy.vim/with-examples/example/init/interface.gif)
 
 ### Init abstract class `<C-p>iac`
-![init abstract class](https://raw.githubusercontent.com/ta-tikoma/php.easy.vim/main/example/init/abstract-class.gif)
+![init abstract class](https://raw.githubusercontent.com/ta-tikoma/php.easy.vim/with-examples/example/init/abstract-class.gif)
 
 ### Init class `<C-p>ic`
-![init class](https://raw.githubusercontent.com/ta-tikoma/php.easy.vim/main/example/init/class.gif)
+![init class](https://raw.githubusercontent.com/ta-tikoma/php.easy.vim/with-examples/example/init/class.gif)
 
 ## Add doc block `<C-p>8`
 
 ### Class
-![doc class](https://raw.githubusercontent.com/ta-tikoma/php.easy.vim/main/example/doc/class.gif)
+![doc class](https://raw.githubusercontent.com/ta-tikoma/php.easy.vim/with-examples/example/doc/class.gif)
 
 ### Constant
-![doc constant](https://raw.githubusercontent.com/ta-tikoma/php.easy.vim/main/example/doc/constant.gif)
+![doc constant](https://raw.githubusercontent.com/ta-tikoma/php.easy.vim/with-examples/example/doc/constant.gif)
 
 ### Property
-![doc property](https://raw.githubusercontent.com/ta-tikoma/php.easy.vim/main/example/doc/property.gif)
+![doc property](https://raw.githubusercontent.com/ta-tikoma/php.easy.vim/with-examples/example/doc/property.gif)
 
 ### Method
-![doc method](https://raw.githubusercontent.com/ta-tikoma/php.easy.vim/main/example/doc/method.gif)
+![doc method](https://raw.githubusercontent.com/ta-tikoma/php.easy.vim/with-examples/example/doc/method.gif)
 
 ### Variable
-![doc variable](https://raw.githubusercontent.com/ta-tikoma/php.easy.vim/main/example/doc/variable.gif)
+![doc variable](https://raw.githubusercontent.com/ta-tikoma/php.easy.vim/with-examples/example/doc/variable.gif)
