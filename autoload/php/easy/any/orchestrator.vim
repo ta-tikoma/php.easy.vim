@@ -32,6 +32,7 @@ function! php#easy#any#orchestrator#itIs(patterns)
     " who has min position
     for [key, value] in items(l:positions)
         if l:minPosition == value
+            call cursor(l:minPosition, 0)
             return key
         endif
     endfor
