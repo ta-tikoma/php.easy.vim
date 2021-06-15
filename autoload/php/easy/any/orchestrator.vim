@@ -1,7 +1,14 @@
 function! php#easy#any#orchestrator#itIs(patterns)
     normal! k
 
-    let l:patterns = {'method': g:php#easy#any#regex#method, 'constant': g:php#easy#any#regex#constant, 'property': g:php#easy#any#regex#property, 'variable': g:php#easy#any#regex#variable, 'object': g:php#easy#any#regex#object}
+    let l:patterns = {
+        \ g:php#easy#any#regex#method: 'method',
+        \ g:php#easy#any#regex#methodEnd: 'method',
+        \ g:php#easy#any#regex#constant: 'constant', 
+        \ g:php#easy#any#regex#property: 'property',
+        \ g:php#easy#any#regex#variable: 'variable',
+        \ g:php#easy#any#regex#object: 'object'
+        \ }
 
     " if we on docblock go to end
     if match(getline("."), g:php#easy#any#regex#commentMiddle) != -1
@@ -9,33 +16,41 @@ function! php#easy#any#orchestrator#itIs(patterns)
     endif
 
     " only from argument
-    for [key, value] in items(l:patterns)
-        if index(a:patterns, key) == -1
-            call remove(l:patterns, key)
+    for [l:regex, l:name] in items(l:patterns)
+        if index(a:patterns, l:name) == -1
+            call remove(l:patterns, l:regex)
         endif
     endfor
 
     let l:positions = {}
+    let l:curPostiion = line('.')
 
     " find positions
-    for [key, value] in items(l:patterns)
-        let l:position = search(value, 'nW')
+    for [l:regex, l:name] in items(l:patterns)
+        " down
+        let l:position = search(l:regex, 'nW')
         if l:position != 0
-            let l:positions[key] = l:position
+            let l:positions[abs(l:position - l:curPostiion)] = {
+                \ 'name': l:name,
+                \ 'position': l:position
+                \ }
+        endif
+        " up
+        let l:position = search(l:regex, 'bnW')
+        if l:position != 0
+            let l:positions[abs(l:position - l:curPostiion)] = {
+                \ 'name': l:name,
+                \ 'position': l:position
+                \ }
         endif
     endfor
 
     " echo l:positions
+    let l:result = l:positions[min(keys(l:positions))]
 
-    let l:minPosition = min(values(l:positions))
+    call cursor(l:result['position'], 0)
 
-    " who has min position
-    for [key, value] in items(l:positions)
-        if l:minPosition == value
-            call cursor(l:minPosition, 0)
-            return key
-        endif
-    endfor
+    return l:result['name']
 endfunction
 
 " copy

@@ -17,7 +17,7 @@ endfunction
 
 function! s:SelectConstant()
     " docs
-    normal! 0
+    normal! k0
     if match(getline("."), g:php#easy#any#regex#commentEnd) != -1
         call search(g:php#easy#any#regex#comment, "b")
     else

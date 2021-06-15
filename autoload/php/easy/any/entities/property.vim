@@ -16,13 +16,14 @@ endfunction
 
 function! s:SelectProperty()
     " docs
-    normal! 0
+    normal! k0
     if match(getline("."), g:php#easy#any#regex#commentEnd) != -1
         call search(g:php#easy#any#regex#comment, "b")
     else
         normal! j
     endif
 
+    " todo: define array in property
     normal! V
     call search(g:php#easy#any#regex#property, 'e')
 endfunction
