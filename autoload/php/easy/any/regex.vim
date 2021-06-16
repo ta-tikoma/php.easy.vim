@@ -1,9 +1,10 @@
 let g:php#easy#any#regex#tab           = '\s\{4}'
 let g:php#easy#any#regex#startTab      = '^' . g:php#easy#any#regex#tab
 let g:php#easy#any#regex#visibility    = g:php#easy#any#regex#startTab . '\(public\|protected\|private\|\)\s\{1}'
+let g:php#easy#any#regex#static        = '\(static\s\|\)'
 let g:php#easy#any#regex#constant      = g:php#easy#any#regex#visibility . 'const '
-let g:php#easy#any#regex#property      = g:php#easy#any#regex#visibility . '\(?*\w\+\s\|\)\$'
-let g:php#easy#any#regex#method        = g:php#easy#any#regex#visibility . '\(static\s\|\)function'
+let g:php#easy#any#regex#property      = g:php#easy#any#regex#visibility . g:php#easy#any#regex#static . '\(?*\w\+\s\|\)\$'
+let g:php#easy#any#regex#method        = g:php#easy#any#regex#visibility . g:php#easy#any#regex#static . 'function'
 let g:php#easy#any#regex#methodEnd     = g:php#easy#any#regex#startTab . '}'
 let g:php#easy#any#regex#comment       = g:php#easy#any#regex#startTab . '\/'
 let g:php#easy#any#regex#commentMiddle = g:php#easy#any#regex#startTab . '\*'
