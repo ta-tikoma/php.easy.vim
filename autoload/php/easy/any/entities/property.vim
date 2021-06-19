@@ -42,7 +42,7 @@ function! php#easy#any#entities#property#replica()
     normal! o
     normal! pzz
     call search(g:php#easy#any#regex#property, 'e')
-    normal! ldw
+    normal! lde
     startinsert
 endfunction
 

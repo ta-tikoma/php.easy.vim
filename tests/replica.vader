@@ -1,0 +1,199 @@
+##########################
+# Replica constant       #
+##########################
+
+Given php (Php class file with constant):
+  <?php
+
+  declare(strict_types=1);
+
+  namespace App;
+
+  final class Test
+  {
+      private const TEST = 1;
+  }
+
+Do (Go to constant and use <C-p>r):
+  8j
+  \<C-p>rFOO
+
+Expect (Replica of constant):
+  <?php
+
+  declare(strict_types=1);
+
+  namespace App;
+
+  final class Test
+  {
+      private const TEST = 1;
+
+      private const FOO = 1;
+  }
+
+############################
+# Replica constant with doc #
+############################
+
+Given php (Php class file with constant with doc):
+  <?php
+
+  declare(strict_types=1);
+
+  namespace App;
+
+  final class Test
+  {
+      /**
+       * constant
+       */
+      private const TEST = 1;
+  }
+
+Do (Go to constant and use <C-p>d):
+  8j
+  \<C-p>rFOO
+
+Expect (Replica of constant with doc):
+  <?php
+
+  declare(strict_types=1);
+
+  namespace App;
+
+  final class Test
+  {
+      /**
+       * constant
+       */
+      private const TEST = 1;
+
+      /**
+       * constant
+       */
+      private const FOO = 1;
+  }
+
+##########################
+# Replica property        #
+##########################
+
+Given php (Php class file with property):
+  <?php
+
+  declare(strict_types=1);
+
+  namespace App;
+
+  final class Test
+  {
+      private int $foo;
+  }
+
+Do (Go to property and use <C-p>r):
+  8j
+  \<C-p>rmoo
+
+Expect (Replica of property):
+  <?php
+
+  declare(strict_types=1);
+
+  namespace App;
+
+  final class Test
+  {
+      private int $foo;
+
+      private int $moo;
+  }
+
+##########################
+# Replica method         #
+##########################
+
+Given php (Php class file with method):
+  <?php
+
+  declare(strict_types=1);
+
+  namespace App;
+
+  final class Test
+  {
+      private function foo()
+      {
+      }
+  }
+
+Do (Go to method and use <C-p>r):
+  8j
+  \<C-p>rmoo
+
+Expect (Replica of method):
+  <?php
+
+  declare(strict_types=1);
+
+  namespace App;
+
+  final class Test
+  {
+      private function foo()
+      {
+      }
+
+      private function moo()
+      {
+      }
+  }
+
+############################
+# Replica method with doc  #
+############################
+
+Given php (Php class file with method):
+  <?php
+
+  declare(strict_types=1);
+
+  namespace App;
+
+  final class Test
+  {
+      /**
+       * method
+       */
+      private function foo()
+      {
+      }
+  }
+
+Do (Go to method and use <C-p>d):
+  8j
+  \<C-p>rmoo
+
+Expect (Replica of method with doc):
+  <?php
+
+  declare(strict_types=1);
+
+  namespace App;
+
+  final class Test
+  {
+      /**
+       * method
+       */
+      private function foo()
+      {
+      }
+
+      /**
+       * method
+       */
+      private function moo()
+      {
+      }
+  }

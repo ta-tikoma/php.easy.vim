@@ -1,0 +1,164 @@
+##########################
+# Delete constant        #
+##########################
+
+Given php (Php class file with constant):
+  <?php
+
+  declare(strict_types=1);
+
+  namespace App;
+
+  final class Test
+  {
+      private const TEST = 1;
+  }
+
+Do (Go to constant and use <C-p>d):
+  8j
+  \<C-p>d
+
+Expect (Deleted constant):
+  <?php
+
+  declare(strict_types=1);
+
+  namespace App;
+
+  final class Test
+  {
+  }
+
+############################
+# Delete constant with doc #
+############################
+
+Given php (Php class file with constant with doc):
+  <?php
+
+  declare(strict_types=1);
+
+  namespace App;
+
+  final class Test
+  {
+      /**
+       * constant
+       */
+      private const TEST = 1;
+  }
+
+Do (Go to constant and use <C-p>d):
+  8j
+  \<C-p>d
+
+Expect (Deleted constant with doc):
+  <?php
+
+  declare(strict_types=1);
+
+  namespace App;
+
+  final class Test
+  {
+  }
+
+##########################
+# Delete property        #
+##########################
+
+Given php (Php class file with property):
+  <?php
+
+  declare(strict_types=1);
+
+  namespace App;
+
+  final class Test
+  {
+      private int $foo;
+  }
+
+Do (Go to property and use <C-p>d):
+  8j
+  \<C-p>d
+
+Expect (Deleted property):
+  <?php
+
+  declare(strict_types=1);
+
+  namespace App;
+
+  final class Test
+  {
+  }
+
+##########################
+# Deleted method         #
+##########################
+
+Given php (Php class file with method):
+  <?php
+
+  declare(strict_types=1);
+
+  namespace App;
+
+  final class Test
+  {
+      private function foo()
+      {
+      }
+  }
+
+Do (Go to method and use <C-p>d):
+  8j
+  \<C-p>d
+
+Expect (Deleted method):
+  <?php
+
+  declare(strict_types=1);
+
+  namespace App;
+
+  final class Test
+  {
+  }
+
+############################
+# Deleted method with doc  #
+############################
+
+Given php (Php class file with method):
+  <?php
+
+  declare(strict_types=1);
+
+  namespace App;
+
+  final class Test
+  {
+      /**
+       * method
+       */
+      private function foo()
+      {
+      }
+  }
+
+Do (Go to method and use <C-p>d):
+  8j
+  \<C-p>d
+
+Expect (Deleted method with doc):
+  <?php
+
+  declare(strict_types=1);
+
+  namespace App;
+
+  final class Test
+  {
+  }

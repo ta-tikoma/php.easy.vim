@@ -84,3 +84,12 @@ php#easy#helpers#insert#is()
 
 ### Variable
 ![doc variable](https://raw.githubusercontent.com/ta-tikoma/php.easy.vim/with-examples/example/doc/variable.gif)
+
+# Tests
+
+## Required
+- [Vader.vim](https://github.com/junegunn/vader.vim)
+
+## Description
+
+Command for test execute: `nvim -c 'Vader! tests/*' > /dev/null`

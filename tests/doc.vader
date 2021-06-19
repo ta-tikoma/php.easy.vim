@@ -1,0 +1,180 @@
+##########################
+# Class docblock         #
+##########################
+
+Given php (Php class file):
+  <?php
+
+  declare(strict_types=1);
+
+  namespace App;
+
+  final class Test
+  {
+  }
+
+Do (Go to class name and use <C-p>8):
+  6j
+  \<C-p>8class
+
+Expect (Class with docblock):
+  <?php
+
+  declare(strict_types=1);
+
+  namespace App;
+
+  /**
+   * class
+   */
+  final class Test
+  {
+  }
+
+##########################
+# Constant docblock      #
+##########################
+
+Given php (Php class file with constant):
+  <?php
+
+  declare(strict_types=1);
+
+  namespace App;
+
+  final class Test
+  {
+      private const TEST = 1;
+  }
+
+Do (Go to constant and use <C-p>8):
+  8j
+  \<C-p>8constant
+
+Expect (Constant with docblock):
+  <?php
+
+  declare(strict_types=1);
+
+  namespace App;
+
+  final class Test
+  {
+      /**
+       * constant
+       */
+      private const TEST = 1;
+  }
+
+##########################
+# Property docblock      #
+##########################
+
+Given php (Php class file with property):
+  <?php
+
+  declare(strict_types=1);
+
+  namespace App;
+
+  final class Test
+  {
+      private int $foo;
+  }
+
+Do (Go to property and use <C-p>8):
+  8j
+  \<C-p>8property
+
+Expect (property with docblock):
+  <?php
+
+  declare(strict_types=1);
+
+  namespace App;
+
+  final class Test
+  {
+      /**
+       * property
+       */
+      private int $foo;
+  }
+
+##########################
+# Method docblock        #
+##########################
+
+Given php (Php class file with method):
+  <?php
+
+  declare(strict_types=1);
+
+  namespace App;
+
+  final class Test
+  {
+      private function foo()
+      {
+      }
+  }
+
+Do (Go to method and use <C-p>8):
+  8j
+  \<C-p>8method
+
+Expect (Method with docblock):
+  <?php
+
+  declare(strict_types=1);
+
+  namespace App;
+
+  final class Test
+  {
+      /**
+       * method
+       */
+      private function foo()
+      {
+      }
+  }
+
+##########################
+# Variable docblock      #
+##########################
+
+Given php (Php class file with variable):
+  <?php
+
+  declare(strict_types=1);
+
+  namespace App;
+
+  final class Test
+  {
+      private function foo()
+      {
+          $moo = app(Moo::class);
+      }
+  }
+
+Do (Go to variable and use <C-p>8):
+  10j
+  \<C-p>8
+
+Expect (Variable with docblock):
+  <?php
+
+  declare(strict_types=1);
+
+  namespace App;
+
+  final class Test
+  {
+      private function foo()
+      {
+          /** @var Moo $moo */
+          $moo = app(Moo::class);
+      }
+  }
