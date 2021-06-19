@@ -59,7 +59,7 @@ function! php#easy#any#entities#property#doc()
         normal! o
         startinsert!
     else
-        normal! jj
+        normal! j
         let @p = "    /**\n     * \n     */\n"
         normal "pPj
         startinsert!

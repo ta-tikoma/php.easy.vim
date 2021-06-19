@@ -62,11 +62,11 @@ endfunction
 
 " doc function
 function! php#easy#any#entities#method#doc()
-    normal! jj
-    call search(g:php#easy#any#regex#method, "b")
+    " normal! jj
+    " call search(g:php#easy#any#regex#method, "b")
     normal! k
     if match(getline("."), g:php#easy#any#regex#commentEnd) != -1
-        normal! o
+        normal! O
         startinsert!
     else
         normal! j

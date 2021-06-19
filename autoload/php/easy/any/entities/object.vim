@@ -1,7 +1,7 @@
 " doc variable
 function! php#easy#any#entities#object#doc()
     let @p = "/**\n * \n */\n"
-    normal j"pPj
+    normal "pPj
     startinsert!
 endfunction
 

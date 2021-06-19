@@ -1,6 +1,5 @@
 " doc variable
 function! php#easy#any#entities#variable#doc()
-    normal! j
     let l:line = getline(".")
     let l:variable = matchstr(l:line, '\(\$\w\+\)')
     let l:matches = matchlist(l:line, '\(\w\+\)::class')
