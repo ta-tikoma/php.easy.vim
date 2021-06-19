@@ -1,17 +1,17 @@
 function! php#easy#helpers#visibility#choose()
-    echon '0:none 1:private 2:protected 3:public'
+    echon 'n:none p:private r:protected u:public'
 
     let l:choice = nr2char(getchar())
 
-    if l:choice == 1
+    if l:choice == 'p'
         return 'private '
     endif
     
-    if l:choice == 2
+    if l:choice == 'r'
         return 'protected '
     endif
 
-    if l:choice == 3
+    if l:choice == 'u'
         return 'public '
     endif
 
