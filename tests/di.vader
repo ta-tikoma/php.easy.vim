@@ -1,0 +1,111 @@
+####################################
+# Add di without constructor       #
+####################################
+
+Given php (Php class file witout constructor):
+  <?php
+
+  declare(strict_types=1);
+
+  namespace App;
+
+  final class Test
+  {
+      protected const TEST = 1;
+
+      private int $test;
+
+      private function foo()
+      {
+          $moo = app(Moo::class);
+      }
+  }
+
+Do (Use <C-p>di):
+  \<C-p>diint $bar\<Esc>
+  :call php#easy#di#end()\<CR>
+
+Expect (Add depended injection):
+  <?php
+
+  declare(strict_types=1);
+
+  namespace App;
+
+  final class Test
+  {
+      protected const TEST = 1;
+
+      private int $test;
+
+      private int $bar;
+
+      public function __construct(int $bar)
+      {
+          $this->bar = $bar;
+      }
+
+      private function foo()
+      {
+          $moo = app(Moo::class);
+      }
+  }
+
+####################################
+# Add di with constructor          #
+####################################
+
+Given php (Php class file with constructor):
+  <?php
+
+  declare(strict_types=1);
+
+  namespace App;
+
+  final class Test
+  {
+      protected const TEST = 1;
+
+      private int $test;
+
+      public function __construct()
+      {
+          $this->test = 1;
+      }
+
+      private function foo()
+      {
+          $moo = app(Moo::class);
+      }
+  }
+
+Do (Use <C-p>di):
+  \<C-p>diint $bar\<Esc>
+  :call php#easy#di#end()\<CR>
+
+Expect (Add depended injection):
+  <?php
+
+  declare(strict_types=1);
+
+  namespace App;
+
+  final class Test
+  {
+      protected const TEST = 1;
+
+      private int $test;
+
+      private int $bar;
+
+      public function __construct(int $bar)
+      {
+          $this->bar = $bar;
+          $this->test = 1;
+      }
+
+      private function foo()
+      {
+          $moo = app(Moo::class);
+      }
+  }

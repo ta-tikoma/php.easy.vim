@@ -69,5 +69,5 @@ function! php#easy#di#construct()
             normal! j
         endif
     endif
-    exec "normal! O\<CR>public function __construct()\<CR>{\<CR>}\<CR>"
+    exec "normal! Opublic function __construct()\<CR>{\<CR>}\<CR>"
 endfunction
