@@ -1,0 +1,93 @@
+##########################
+# Append constant        #
+##########################
+
+Given php (Php class file without constant):
+  <?php
+
+  declare(strict_types=1);
+
+  namespace App;
+
+  final class Test
+  {
+  }
+
+Do (Use <C-p>c):
+  \<C-p>cpTEST = 1
+
+Expect (Append constant):
+  <?php
+
+  declare(strict_types=1);
+
+  namespace App;
+
+  final class Test
+  {
+      private const TEST = 1;
+  }
+
+
+##########################
+# Append property        #
+##########################
+
+Given php (Php class file without property):
+  <?php
+
+  declare(strict_types=1);
+
+  namespace App;
+
+  final class Test
+  {
+  }
+
+Do (Use <C-p>pp):
+  \<C-p>ppint $foo
+
+Expect (Append property):
+  <?php
+
+  declare(strict_types=1);
+
+  namespace App;
+
+  final class Test
+  {
+      private int $foo;
+  }
+
+##########################
+# Append method         #
+##########################
+
+Given php (Php class file without method):
+  <?php
+
+  declare(strict_types=1);
+
+  namespace App;
+
+  final class Test
+  {
+  }
+
+Do (Use <C-p>pm):
+  \<C-p>mpfoo()\<CR>{\<CR>}
+
+Expect (Deleted method):
+  <?php
+
+  declare(strict_types=1);
+
+  namespace App;
+
+  final class Test
+  {
+      private function foo()
+      {
+      }
+  }
+
