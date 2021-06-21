@@ -32,12 +32,12 @@ php#easy#helpers#insert#is()
 | `<C-p>d`            | `php#easy#any#orchestrator#delete`             | **D**elete *any* under cursor |
 | `<C-p>8`            | `php#easy#any#orchestrator#doc`                | PhpDocBlock for *any* or class or variable |
 | **Append**          |                                                | `{0-3}` it is visibility; 0 - nothing, 1 - private, 2 - protected, 3 - public |
-| `<C-p>c{0-3}`       | `php#easy#any#entities#constant#append()`      | **A**ppend **c**onstant |
-| `<C-p>p{0-3}`       | `php#easy#any#entities#property#append()`      | **A**ppend **p**roperty |
-| `<C-p>m{0-3}`       | `php#easy#any#entities#method#append()`        | **A**ppend **m**ethod |
+| `<C-p>c(n|p|r|u)`   | `php#easy#any#entities#constant#append()`      | **A**ppend **c**onstant |
+| `<C-p>p(n|p|r|u)`   | `php#easy#any#entities#property#append()`      | **A**ppend **p**roperty |
+| `<C-p>m(n|p|r|u)`   | `php#easy#any#entities#method#append()`        | **A**ppend **m**ethod |
 | `<C-p>a`            | `php#easy#argument#append()`                   | **A**ppend new **a**rgument in current function |
 | **Argument**        |||
-| `<C-p>da{d}`        | `php#easy#argument#delete()`                   | **D**elete **a**rgument by number in current function |
+| `<C-p>da(\d+)`      | `php#easy#argument#delete()`                   | **D**elete **a**rgument by number in current function |
 | **DI**              |||
 | `<C-p>di`           | `php#easy#di#append()`                         | **A**ppend **d**epended **i**njection: add constructor to current class (if not exist), append argument and property |
 | **Objects**         |||
@@ -47,7 +47,7 @@ php#easy#helpers#insert#is()
 | `<C-p>it`           | `php#easy#any#entities#object#trait()`         | **I**nitialize **t**rait in current file |
 | **Other**           |||
 | `<C-p>l`            | `php#easy#other#log()`                         | Append on new line print structure for debug |
-| `<C-p>v{0-3}`       | `php#easy#other#changeVisibility()`            | Change **v**isibiliti property or function on current line |
+| `<C-p>v(n|p|r|u)`   | `php#easy#other#changeVisibility()`            | Change **v**isibiliti property or function on current line |
 | **Navigation**      |||
 | `<tab>`             | `php#easy#navigation#next()`                   | Jump to next constant, property, start or end method |
 | `<S-tab>`           | `php#easy#navigation#prev()`                   | Jump to prev constant, property, start or end method |
