@@ -162,3 +162,46 @@ Expect (Deleted method with doc):
   final class Test
   {
   }
+
+################################
+# Deleted argument from method #
+################################
+
+Given php (Php class file with method with arguments):
+  <?php
+
+  declare(strict_types=1);
+
+  namespace App;
+
+  final class Test
+  {
+      /**
+       * method
+       */
+      private function foo(int $a, string $b, bool $c)
+      {
+      }
+  }
+
+Do (Go to method and use <C-p>da):
+  8j
+  \<C-p>da2
+
+Expect (Deleted second argument from method):
+  <?php
+
+  declare(strict_types=1);
+
+  namespace App;
+
+  final class Test
+  {
+      /**
+       * method
+       */
+      private function foo(int $a, bool $c)
+      {
+      }
+  }
+

@@ -28,7 +28,6 @@ Expect (Append constant):
       private const TEST = 1;
   }
 
-
 ##########################
 # Append property        #
 ##########################
@@ -77,7 +76,7 @@ Given php (Php class file without method):
 Do (Use <C-p>pm):
   \<C-p>mpfoo()\<CR>{\<CR>}
 
-Expect (Deleted method):
+Expect (append method):
   <?php
 
   declare(strict_types=1);
@@ -87,6 +86,42 @@ Expect (Deleted method):
   final class Test
   {
       private function foo()
+      {
+      }
+  }
+
+
+###############################
+# Append argument to method   #
+###############################
+
+Given php (Php class file method):
+  <?php
+
+  declare(strict_types=1);
+
+  namespace App;
+
+  final class Test
+  {
+      private function foo()
+      {
+      }
+  }
+
+Do (Use <C-p>a):
+  \<C-p>aint $moo
+
+Expect (append argument to method):
+  <?php
+
+  declare(strict_types=1);
+
+  namespace App;
+
+  final class Test
+  {
+      private function foo(int $moo)
       {
       }
   }
