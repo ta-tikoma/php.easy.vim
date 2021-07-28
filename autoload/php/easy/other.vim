@@ -7,9 +7,14 @@ endfunction
 
 " change private of function or property
 function! php#easy#other#changeVisibility()
-    let l:visibility = php#easy#helpers#visibility#choose()
-
-    silent exec ':s/\(private\|protected\|public\)/' . l:visibility . '/g'
+    let l:line = getline('.')
+    if stridx(l:line, 'public') != -1
+        silent :s/public/private/g
+    elseif stridx(l:line, 'private') != -1
+        silent :s/private/protected/g
+    elseif stridx(l:line, 'protected') != -1
+        silent :s/protected/public/g
+    endif
 endfunction
 
 " append space
