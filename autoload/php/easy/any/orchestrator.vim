@@ -79,7 +79,7 @@ function! php#easy#any#orchestrator#delete()
 endfunction
 
 " phpdoc
-function! php#easy#any#orchestrator#doc()
+function! php#easy#any#orchestrator#docBlock()
     let l:itIs = php#easy#any#orchestrator#itIs(['method', 'constant', 'property', 'variable', 'object'])
     exec 'call php#easy#any#entities#' . l:itIs . '#doc()'
 endfunction
