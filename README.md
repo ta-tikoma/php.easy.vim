@@ -39,7 +39,7 @@ php#easy#helpers#insert#is()
 | **Argument**              |||
 | `<C-p><C-d><C-a>(\d+)`    | `php#easy#argument#delete()`                   | **D**elete **a**rgument by number in current function |
 | **DI**                    |||
-| `<C-p>di`                 | `php#easy#di#append()`                         | **A**ppend **d**epended **i**njection: add constructor to current class (if not exist), append argument and property |
+| `<C-p><C-d><C-i>`         | `php#easy#di#append()`                         | **A**ppend **d**epended **i**njection: add constructor to current class (if not exist), append argument and property |
 | **Objects**               |||
 | `<C-p><C-i><C-c>`         | `php#easy#any#entities#object#class()`         | **I**nitialize **c**lass in current file |
 | `<C-p><C-i><C-a><C-c>`    | `php#easy#any#entities#object#abstractClass()` | **I**nitialize **a**bstract **c**lass in current file |
