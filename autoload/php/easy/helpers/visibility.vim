@@ -1,5 +1,5 @@
 function! php#easy#helpers#visibility#choose()
-    return 'public'
+    return 'public '
 
     " echon 'n:none p:private r:protected u:public'
     "

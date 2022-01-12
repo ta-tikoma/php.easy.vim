@@ -2,7 +2,7 @@
 function! php#easy#any#entities#variable#doc()
     let l:line = getline(".")
     let l:variable = matchstr(l:line, '\(\$\w\+\)')
-    let l:matches = matchlist(l:line, '\(\w\+\)::class')
+    let l:matches = matchlist(l:line, '\(\w\+\)::')
 
     if len(l:matches) > 1
         let l:type = l:matches[1]
@@ -13,7 +13,7 @@ function! php#easy#any#entities#variable#doc()
     exec 'normal! O/** @var ' . l:type . ' ' . l:variable . ' */'
 
     if len(l:matches) < 1
-        normal! 3ge2l
+        normal! ^fr2l
         startinsert
     endif
 endfunction
