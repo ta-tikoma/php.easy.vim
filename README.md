@@ -26,49 +26,49 @@ php#easy#helpers#insert#is()
 
 | Default Key Binding | Function  | Description |
 | --- | --- | --- |
-| **Any**                   |                                                | function or property or constant |
-| `<C-p><C-y>`              | `php#easy#any#orchestrator#copy`               | **Y**ank (copy) *any* under cursor |
-| `<C-p><C-r>`              | `php#easy#any#orchestrator#replica`            | **R**eplica *any*: Copy under cursor, paste after current and trigger rename function |
-| `<C-p><C-d>`              | `php#easy#any#orchestrator#delete`             | **D**elete *any* under cursor |
-| `<C-p><C-b>`              | `php#easy#any#orchestrator#docBlock`           | PhpDoc**B**lock for *any* or class or variable |
-| **Append**                |                                                | |
-| `<C-p><C-c>`              | `php#easy#any#entities#constant#append()`      | Append **c**onstant |
-| `<C-p><C-p>`              | `php#easy#any#entities#property#append()`      | Append **p**roperty |
-| `<C-p><C-m>`              | `php#easy#any#entities#method#append()`        | Append **m**ethod |
-| `<C-p><C-a>`              | `php#easy#argument#append()`                   | Append new **a**rgument in current function |
-| **Argument**              |||
-| `<C-p><C-d><C-a>(\d+)`    | `php#easy#argument#delete()`                   | **D**elete **a**rgument by number in current function |
-| **DI**                    |||
-| `<C-p><C-d><C-i>`         | `php#easy#di#append()`                         | Append **d**epended **i**njection: add constructor to current class (if not exist), append argument and property |
-| **Objects**               |||
-| `<C-p><C-i><C-c>`         | `php#easy#any#entities#object#class()`         | **I**nitialize **c**lass in current file |
-| `<C-p><C-i><C-a><C-c>`    | `php#easy#any#entities#object#abstractClass()` | **I**nitialize **a**bstract **c**lass in current file |
-| `<C-p><C-i><C-i>`         | `php#easy#any#entities#object#interface()`     | **I**nitialize **i**nterface in current file |
-| `<C-p><C-i><C-t>`         | `php#easy#any#entities#object#trait()`         | **I**nitialize **t**rait in current file |
-| **Other**                 |||
-| `<C-p><C-l>`              | `php#easy#other#log()`                         | Append on new line print structure for debug |
-| `<C-p><C-p>`              | `php#easy#other#changeVisibility()`            | Change visibility property or function on current line |
-| **Navigation**            |||
-| `<tab>`                   | `php#easy#navigation#next()`                   | Jump to next constant, property, start or end method |
-| `<S-tab>`                 | `php#easy#navigation#prev()`                   | Jump to prev constant, property, start or end method |
+| **Any**        |                                                | function or property or constant |
+|                | `php#easy#any#orchestrator#copy`               | **Y**ank (copy) *any* under cursor |
+| `-r`           | `php#easy#any#orchestrator#replica`            | **R**eplica *any*: Copy under cursor, paste after current and trigger rename function |
+| `-d`           | `php#easy#any#orchestrator#delete`             | **D**elete *any* under cursor |
+| `-b`           | `php#easy#any#orchestrator#docBlock`           | PhpDoc**B**lock for *any* or class or variable |
+| **Append**     |                                                | |
+| `-c`           | `php#easy#any#entities#constant#append()`      | Append **c**onstant |
+| `-p`           | `php#easy#any#entities#property#append()`      | Append **p**roperty |
+| `-m`           | `php#easy#any#entities#method#append()`        | Append **m**ethod |
+|                | `php#easy#argument#append()`                   | Append new **a**rgument in current function |
+| **Argument**   |||
+|                | `php#easy#argument#delete()`                   | **D**elete **a**rgument by number in current function |
+| **DI**         |||
+| `-di`          | `php#easy#di#append()`                         | Append **d**epended **i**njection: add constructor to current class (if not exist), append argument and property |
+| **Objects**    |||
+| `-ic`          | `php#easy#any#entities#object#class()`         | **I**nitialize **c**lass in current file |
+| `-iac`         | `php#easy#any#entities#object#abstractClass()` | **I**nitialize **a**bstract **c**lass in current file |
+| `-ii`          | `php#easy#any#entities#object#interface()`     | **I**nitialize **i**nterface in current file |
+| `-it`          | `php#easy#any#entities#object#trait()`         | **I**nitialize **t**rait in current file |
+| **Other**      |||
+|                | `php#easy#other#log()`                         | Append on new line print structure for debug |
+|                | `php#easy#other#changeVisibility()`            | Change visibility property or function on current line |
+| **Navigation** |||
+|                | `php#easy#navigation#next()`                   | Jump to next constant, property, start or end method |
+|                | `php#easy#navigation#prev()`                   | Jump to prev constant, property, start or end method |
 
 # Examples
 
 ## Init
 
-### Init trait `<C-p><C-i><C-t>`
+### Init trait `-it`
 ![init trait](https://raw.githubusercontent.com/ta-tikoma/php.easy.vim/with-examples/example/init/trait.gif)
 
-### Init interface `<C-p><C-i><C-i>`
+### Init interface `-ii`
 ![init interface](https://raw.githubusercontent.com/ta-tikoma/php.easy.vim/with-examples/example/init/interface.gif)
 
-### Init abstract class `<C-p><C-i><C-a><C-c>`
+### Init abstract class `-iac`
 ![init abstract class](https://raw.githubusercontent.com/ta-tikoma/php.easy.vim/with-examples/example/init/abstract-class.gif)
 
-### Init class `<C-p><C-i><C-c>`
+### Init class `-ic`
 ![init class](https://raw.githubusercontent.com/ta-tikoma/php.easy.vim/with-examples/example/init/class.gif)
 
-## Add doc block `<C-p><C-b>`
+## Add doc block `-b`
 
 ### Class
 ![doc class](https://raw.githubusercontent.com/ta-tikoma/php.easy.vim/with-examples/example/doc/class.gif)
