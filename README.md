@@ -27,7 +27,7 @@ php#easy#helpers#insert#is()
 | Default Key Binding | Function  | Description |
 | --- | --- | --- |
 | **Any**        |                                                | function or property or constant |
-|                | `php#easy#any#orchestrator#copy`               | **Y**ank (copy) *any* under cursor |
+| `-y`           | `php#easy#any#orchestrator#copy`               | **Y**ank (copy) *any* under cursor |
 | `-r`           | `php#easy#any#orchestrator#replica`            | **R**eplica *any*: Copy under cursor, paste after current and trigger rename function |
 | `-d`           | `php#easy#any#orchestrator#delete`             | **D**elete *any* under cursor |
 | `-b`           | `php#easy#any#orchestrator#docBlock`           | PhpDoc**B**lock for *any* or class or variable |
@@ -35,9 +35,9 @@ php#easy#helpers#insert#is()
 | `-c`           | `php#easy#any#entities#constant#append()`      | Append **c**onstant |
 | `-p`           | `php#easy#any#entities#property#append()`      | Append **p**roperty |
 | `-m`           | `php#easy#any#entities#method#append()`        | Append **m**ethod |
-|                | `php#easy#argument#append()`                   | Append new **a**rgument in current function |
+| `-a`           | `php#easy#argument#append()`                   | Append new **a**rgument in current function |
 | **Argument**   |||
-|                | `php#easy#argument#delete()`                   | **D**elete **a**rgument by number in current function |
+| `-da`          | `php#easy#argument#delete()`                   | **D**elete **a**rgument by number in current function |
 | **DI**         |||
 | `-di`          | `php#easy#di#append()`                         | Append **d**epended **i**njection: add constructor to current class (if not exist), append argument and property |
 | **Objects**    |||
