@@ -60,7 +60,7 @@ function! php#easy#any#entities#property#doc()
         startinsert!
     else
         normal! j
-        let @p = g:php#easy#any#regex#tab . "/**\n" . g:php#easy#any#regex#tab . "* \n" . g:php#easy#any#regex#tab . "*/\n"
+        let @p = g:php#easy#any#regex#tab . "/**\n" . g:php#easy#any#regex#tab . " * \n" . g:php#easy#any#regex#tab . " */\n"
         normal "pPj
         startinsert!
     endif
