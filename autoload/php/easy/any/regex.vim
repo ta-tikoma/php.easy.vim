@@ -12,5 +12,5 @@ let g:php#easy#any#regex#commentMiddle = g:php#easy#any#regex#startTab . '\*'
 let g:php#easy#any#regex#commentEnd    = g:php#easy#any#regex#startTab . '\s\*'
 let g:php#easy#any#regex#any           = g:php#easy#any#regex#startTab . '[p}]\{1}'
 let g:php#easy#any#regex#variable      = '\(' . g:php#easy#any#regex#tab . '\)\+\$\w\+\s\{1}=\s\{1}'
-let g:php#easy#any#regex#object        = '^\(final class\|abstract class\|class\|interface\|trait\)\s\{1}'
+let g:php#easy#any#regex#object        = '^\(final class\|abstract class\|class\|interface\|trait\|enum\)\s\{1}'
 
