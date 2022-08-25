@@ -45,6 +45,7 @@ php#easy#helpers#insert#is()
 | `-iac`         | `php#easy#any#entities#object#abstractClass()` | **I**nitialize **a**bstract **c**lass in current file |
 | `-ii`          | `php#easy#any#entities#object#interface()`     | **I**nitialize **i**nterface in current file |
 | `-it`          | `php#easy#any#entities#object#trait()`         | **I**nitialize **t**rait in current file |
+| `-ie`          | `php#easy#any#entities#object#enum()`          | **I**nitialize **e**num in current file |
 | **Other**      |||
 |                | `php#easy#other#log()`                         | Append on new line print structure for debug |
 |                | `php#easy#other#changeVisibility()`            | Change visibility property or function on current line |

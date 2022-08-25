@@ -10,6 +10,7 @@ if g:phpEasyUseDefaultKeyBinding
     nnoremap -ii  :call php#easy#any#entities#object#interface()<CR>
     nnoremap -iac :call php#easy#any#entities#object#abstractClass()<CR>
     nnoremap -it  :call php#easy#any#entities#object#trait()<CR>
+    nnoremap -ie  :call php#easy#any#entities#object#enum()<CR>
 
     " add
     nnoremap -c  :call php#easy#any#entities#constant#append()<CR>
