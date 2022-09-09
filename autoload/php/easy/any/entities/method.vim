@@ -85,3 +85,26 @@ function! php#easy#any#entities#method#rename()
     startinsert
 endfunction
 
+
+" make construct function
+function! php#easy#any#entities#method#construct()
+    normal! gg
+    let l:firstMethod = search(g:php#easy#any#regex#method)
+    if l:firstMethod == 0
+        normal G
+    else
+        normal! k
+        if match(getline("."), g:php#easy#any#regex#commentEnd) != -1
+            call search(g:php#easy#any#regex#comment, "b")
+        else
+            normal! j
+        endif
+    endif
+    exec "normal! O\<CR>public function __construct()\<CR>{\<CR>}\<CR>"
+
+    call search('public function __construct(', 'ew')
+
+    call php#easy#argument#insert()
+endfunction
+
+

@@ -5,11 +5,10 @@ function! php#easy#di#append()
     " find or create constructor
     let l:constructorBegin = search('public function __construct(', 'ew')
     if l:constructorBegin == 0
-        call php#easy#di#construct()
-        call search('public function __construct(', 'ew')
+        call php#easy#any#entities#method#construct()
+    else
+        call php#easy#argument#insert()
     endif
-
-    call php#easy#argument#insert()
 
     call php#easy#helpers#insert#insert("php#easy#di#end()")
 endfunction
@@ -53,21 +52,4 @@ function! php#easy#di#end()
     endfor
 
     call php#easy#helpers#position#restore()
-endfunction
-
-" append constructor
-function! php#easy#di#construct()
-    normal! gg
-    let l:firstMethod = search(g:php#easy#any#regex#method)
-    if l:firstMethod == 0
-        normal G
-    else
-        normal! k
-        if match(getline("."), g:php#easy#any#regex#commentEnd) != -1
-            call search(g:php#easy#any#regex#comment, "b")
-        else
-            normal! j
-        endif
-    endif
-    exec "normal! O\<CR>public function __construct()\<CR>{\<CR>}\<CR>"
 endfunction
