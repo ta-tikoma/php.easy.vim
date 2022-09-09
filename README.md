@@ -32,8 +32,7 @@ php#easy#helpers#insert#is()
 | `-d`           | `php#easy#any#orchestrator#delete`             | **D**elete *any* under cursor |
 | `-b`           | `php#easy#any#orchestrator#docBlock`           | PhpDoc**B**lock for *any* or class or variable |
 | **Append**     |                                                | |
-| `-c`           | `php#easy#any#entities#constant#append()`      | Append **c**onstant |
-| `-p`           | `php#easy#any#entities#property#append()`      | Append **p**roperty |
+| `-c`           | `php#easy#any#entities#method#construct()`      | Append **c**onstruct |
 | `-m`           | `php#easy#any#entities#method#append()`        | Append **m**ethod |
 | `-a`           | `php#easy#argument#append()`                   | Append new **a**rgument in current function |
 | **Argument**   |||

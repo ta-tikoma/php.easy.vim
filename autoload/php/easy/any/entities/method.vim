@@ -85,7 +85,6 @@ function! php#easy#any#entities#method#rename()
     startinsert
 endfunction
 
-
 " make construct function
 function! php#easy#any#entities#method#construct()
     normal! gg
@@ -100,7 +99,7 @@ function! php#easy#any#entities#method#construct()
             normal! j
         endif
     endif
-    exec "normal! O\<CR>public function __construct()\<CR>{\<CR>}\<CR>"
+    exec "normal! Opublic function __construct()\<CR>{\<CR>}"
 
     call search('public function __construct(', 'ew')
 
