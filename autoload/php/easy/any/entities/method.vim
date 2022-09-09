@@ -106,5 +106,3 @@ function! php#easy#any#entities#method#construct()
 
     call php#easy#argument#insert()
 endfunction
-
-

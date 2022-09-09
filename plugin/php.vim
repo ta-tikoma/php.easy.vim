@@ -13,7 +13,7 @@ if g:phpEasyUseDefaultKeyBinding
     nnoremap -ie  :call php#easy#any#entities#object#enum()<CR>
 
     " add
-    nnoremap -c  :call php#easy#any#entities#method#construct()<CR>
+    nnoremap -c  :call php#easy#any#entities#method#construct() <bar> call php#easy#helpers#insert#insert()<CR>
     " nnoremap -c  :call php#easy#any#entities#constant#append()<CR>
     " nnoremap -p  :call php#easy#any#entities#property#append()<CR>
     nnoremap -m  :call php#easy#any#entities#method#append()<CR>
