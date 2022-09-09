@@ -6,10 +6,13 @@ function! php#easy#any#entities#method#append()
     let l:lastMethod = search(g:php#easy#any#regex#methodEnd, 'b')
     if l:lastMethod == 0
         call search('^}')
-        exec "normal! O" . l:visibility . "function "
+        exec "normal! O\<CR>\<CR>\<Esc>k"
     else
-        exec "normal! o\<CR>" . l:visibility . "function "
+        exec "normal! o\<CR>"
     endif
+
+    let @p = g:php#easy#any#regex#tab . l:visibility . "function \n" . g:php#easy#any#regex#tab . "{\n" . g:php#easy#any#regex#tab . "\n" . g:php#easy#any#regex#tab . "}"
+    normal "pP
 
     startinsert!
 endfunction
@@ -62,15 +65,13 @@ endfunction
 
 " doc function
 function! php#easy#any#entities#method#doc()
-    " normal! jj
-    " call search(g:php#easy#any#regex#method, "b")
     normal! k
     if match(getline("."), g:php#easy#any#regex#commentEnd) != -1
         normal! O
         startinsert!
     else
         normal! j
-        let @p = "    /**\n     * \n     */\n"
+        let @p = g:php#easy#any#regex#tab . "/**\n" . g:php#easy#any#regex#tab . " * \n" . g:php#easy#any#regex#tab . " */\n"
         normal "pPj
         startinsert!
     endif
@@ -83,3 +84,4 @@ function! php#easy#any#entities#method#rename()
     normal! wdw
     startinsert
 endfunction
+

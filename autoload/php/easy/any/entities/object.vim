@@ -25,6 +25,11 @@ function! php#easy#any#entities#object#trait()
     call s:PhpObject("trait")
 endfunction
 
+" init enum
+function! php#easy#any#entities#object#enum()
+    call s:PhpObject("enum")
+endfunction
+
 function! s:PhpObject(type)
     let l:file = expand('%:t:r') 
     let l:path = fnamemodify(expand("%:p:h"), ":~:.")
